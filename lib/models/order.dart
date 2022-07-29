@@ -42,8 +42,10 @@ class Orders extends Equatable {
 Future<List<Orders>> fetchOrders(userid) async {
   List<Orders> orders = [];
   //'https://05ae60d3-8144-4268-8ceb-f5b3577bd086.mock.pstmn.io/getParcels'"http://192.168.100.106:2000/getDeliOrderstdy";
-  String url = serverurl + "getDeliOrderstdy";
   Session_data session = SharedPref().read('session_data');
+  String url = serverurl + session.role == 'Admin'
+      ? "getAdminOrderstdy"
+      : "getDeliOrderstdy";
   String token = session.token;
   var fetchorders = await http.post(
     Uri.parse(url),
@@ -60,8 +62,10 @@ Future<List<Orders>> fetchOrders(userid) async {
 
 Future<List<Orders>> fetchPastOrders(userid) async {
   //'https://05ae60d3-8144-4268-8ceb-f5b3577bd086.mock.pstmn.io/getParcels'"http://192.168.100.106:2000/getDeliOrdersPast"
-  String url = serverurl + "getDeliOrdersPast";
   Session_data session = SharedPref().read('session_data');
+  String url = serverurl + session.role == 'Admin'
+      ? "getAdminOrdersPast"
+      : "getDeliOrdersPast";
   String token = session.token;
   var fetchorders = await http.post(
     Uri.parse(url),
@@ -93,19 +97,18 @@ Future<Orders> getOrderDetails(orderid) async {
   return orders;
 }
 
-Future<int> acceptOrder(ordersecret, status, userid) async {
+Future<int> acceptOrder(
+    String ordersecret, String status, String userid) async {
   //'https://05ae60d3-8144-4268-8ceb-f5b3577bd086.mock.pstmn.io/acceptOrder'
   //"http://192.168.100.106:2000/takeOrder"
   var url = serverurl + "takeOrder";
-  print(url);
-  // Session_data session = SharedPref().read('session_data');
-  // String token = session.token;
+  Session_data session =
+      Session_data.fromJson(await SharedPref().read('session_data'));
+  //Session_data.fromJson(await SharedPref().read('session_data'));
+  String token = session.token;
   var fetchorders = await http.post(
     Uri.parse(url),
-    headers: {
-      "Access-Control_Allow_Origin": "*",
-      // "authorization": token
-    },
+    headers: {"Access-Control_Allow_Origin": "*", "authorization": token},
     body: {'ordersecret': ordersecret, "delistatus": status, "userid": userid},
   );
   print(fetchorders.statusCode);

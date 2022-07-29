@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:pmx/Screen/WrapperScreen/wrapper_screen.dart';
 import 'package:pmx/components/RoundInputField.dart';
 import 'package:pmx/components/RoundPasswordField.dart';
 import 'package:pmx/components/roundbutton.dart';
 import 'package:pmx/constant.dart';
+import 'package:pmx/models/login.dart';
 
 import '../../components/background.dart';
 
@@ -26,14 +28,16 @@ class _LoginScreenState extends State<LoginScreen> {
   late bool isLoading = false;
   late String errorText = '';
   setLoading(bool state) => setState(() => isLoading = state);
-
+  static final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    final _formKey = GlobalKey<FormState>();
+
     return Scaffold(
         backgroundColor: Colors.transparent,
+        resizeToAvoidBottomInset: false,
         body: Background(
+          size: size,
           child: SingleChildScrollView(
               child: Center(
             child: Column(
@@ -45,21 +49,15 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 Image.asset("assets/images/Logo.png",
                     width: size.width * 0.75, alignment: Alignment.center),
-                SizedBox(
-                  height: size.height * 0.2,
-                ),
                 Form(
                   key: _formKey,
                   child: Column(
                     children: <Widget>[
                       RoundedInputField(
-                        hintText: "Phone Number",
+                        hintText: "Username",
                         icon: Icons.phone,
-                        keyboardType: TextInputType.phone,
-                        inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly
-                        ],
-                        validatorText: 'Please enter your phone number',
+                        keyboardType: TextInputType.name,
+                        validatorText: 'Please enter your username',
                         onChanged: (value) {
                           phone = value;
                         },
@@ -89,26 +87,28 @@ class _LoginScreenState extends State<LoginScreen> {
                           onpress: () async {
                             if (isLoading != true) {
                               if (_formKey.currentState!.validate()) {
-                                // try {
-                                //   setLoading(true);
-                                //   var statuscode = await Login(phone, password);
-                                //   print(statuscode);
-                                //   if (statuscode == 200) {
-                                //     Navigator.of(context).pushReplacement(
-                                //         MaterialPageRoute(
-                                //             builder: (BuildContext context) =>
-                                //                 const WrapperScreen()));
-                                //   } else if (statuscode == 401) {
-                                //     errorText = 'Wrong credentials provided.';
-                                //   } else if (statuscode == -1) {
-                                //     errorText =
-                                //         'Connection Error. Please check your internet.';
-                                //   }
-                                // } on Exception catch (_) {
-                                //   setLoading(false);
-                                // } finally {
-                                //   setLoading(false);
-                                // }
+                                try {
+                                  setLoading(true);
+                                  var statuscode = await login(phone, password);
+                                  print(statuscode);
+                                  if (statuscode == 200) {
+                                    Navigator.of(context).pushReplacement(
+                                        MaterialPageRoute(
+                                            builder: (BuildContext context) =>
+                                                const WrapperScreen(
+                                                  title: 'PMXpress',
+                                                )));
+                                  } else if (statuscode == 401) {
+                                    errorText = 'Wrong credentials provided.';
+                                  } else if (statuscode == -1) {
+                                    errorText =
+                                        'Connection Error. Please check your internet.';
+                                  }
+                                } on Exception catch (_) {
+                                  setLoading(false);
+                                } finally {
+                                  setLoading(false);
+                                }
                               }
                             }
                           }),

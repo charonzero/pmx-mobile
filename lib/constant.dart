@@ -1,6 +1,7 @@
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 
+const appname = "PMXpress";
 const primarycolor = Color(0xFFe17624);
 const secondarycolor = Color(0xFF1d1a2f);
 

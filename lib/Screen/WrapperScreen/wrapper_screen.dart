@@ -44,6 +44,7 @@ class _WrapperScreenState extends State<WrapperScreen> {
         child: Scaffold(
             appBar: AppBar(
               title: Text(widget.title),
+              automaticallyImplyLeading: false,
             ),
             extendBody: true,
             body: Center(child: _widget.elementAt(_selectedIndex)),

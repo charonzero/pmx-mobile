@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'package:pmx/models/server.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 
@@ -16,13 +17,22 @@ class Session_data {
       required this.role,
       required this.token});
 
-  factory Session_data.toJson(Map<String, dynamic> json) {
+  factory Session_data.fromJson(Map<String, dynamic> json) {
     return Session_data(
       username: json['username'],
       userid: json['userid'],
       role: json['role'],
       token: json['token'],
     );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'username': username,
+      'userid': userid,
+      'role': role,
+      'token': token
+    };
   }
 
   String toString() {
@@ -51,19 +61,18 @@ class SharedPref {
 Future<int> login(String username, String password) async {
   //https://05ae60d3-8144-4268-8ceb-f5b3577bd086.mock.pstmn.io/checklogin
   //'http://192.168.100.163:2000/mlogin'
-  var url = 'http://192.168.100.163:2000/login';
+  var url = serverurl + '/login';
+
   // await geturl() + "login";
   var response = await http
       .post(Uri.parse(url), body: {'username': username, 'password': password});
-  print(response.body);
-  debugPrint(response.body);
   Map<String, dynamic> decoded = jsonDecode(response.body)["userdata"];
   decoded['token'] = jsonDecode(response.body)["token"];
 
   if (response.statusCode == 200) {
-    Session_data data = Session_data.toJson(decoded);
+    Session_data data = Session_data.fromJson(decoded);
     (await SharedPreferences.getInstance())
-        .setString('session_data', jsonEncode(data));
+        .setString('session_data', jsonEncode(data.toJson()));
   }
 
   return response.statusCode;

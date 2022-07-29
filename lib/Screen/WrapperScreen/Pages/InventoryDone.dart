@@ -24,7 +24,7 @@ class _InventoryDoneState extends State<InventoryDone>
     refreshkey.currentState?.show(atTop: true);
     var session = await SharedPref().read('session_data');
     // debugPrint(session['userid'].toString());
-    fetchOrders(session['userid'].toString()).then((value) {
+    fetchPastOrders(session['userid'].toString()).then((value) {
       // print(order);print(value);
       // print(order.equals(value));
       // print(ListEquality().hash(order));print(ListEquality().hash(value));
@@ -70,7 +70,7 @@ class _InventoryDoneState extends State<InventoryDone>
       padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 10),
       child: Column(
         children: [
-          Text("Pasts Packages",
+          Text("Past Packages",
               style: TextStyle(
                   color: primarycolor,
                   fontSize: 20,
@@ -168,7 +168,8 @@ class _InventoryDoneState extends State<InventoryDone>
                                       Icons.circle_outlined,
                                       color: Colors.grey,
                                     )),
-                                title: Text("OrderID - " + order[index].orderid.toString()),
+                                title: Text("OrderID - " +
+                                    order[index].orderid.toString()),
                                 subtitle: Text(order[index].city +
                                     " / " +
                                     order[index].township),

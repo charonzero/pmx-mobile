@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pmx/Screen/WelcomeScreen/LoginRouter.dart';
 import 'package:pmx/Screen/WrapperScreen/wrapper_screen.dart';
 import 'package:pmx/constant.dart';
 
@@ -15,17 +16,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: _title,
-      theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-          color: primarycolor,
+        debugShowCheckedModeBanner: false,
+        title: _title,
+        theme: ThemeData(
+          appBarTheme: const AppBarTheme(
+            color: primarycolor,
+          ),
+          primaryColor: primarycolor,
+          scaffoldBackgroundColor: Colors.white,
         ),
-        primaryColor: primarycolor,
-        scaffoldBackgroundColor: Colors.white,
-      ),
-      home: const WrapperScreen(title: _title),
-    );
+        home: const LoginRouter(title: appname));
   }
 }
 //

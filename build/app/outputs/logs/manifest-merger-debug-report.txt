@@ -1,8 +1,8 @@
 -- Merging decision tree log ---
 application
-INJECTED from D:\Work\pmx-mobile\android\app\src\main\AndroidManifest.xml:3:4-29:19
-MERGED from [:image_picker_android] D:\Work\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
-MERGED from [:image_picker_android] D:\Work\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
+INJECTED from D:\Startup Dev Repos\pmx-mobile\android\app\src\main\AndroidManifest.xml:3:4-29:19
+MERGED from [:image_picker_android] D:\Startup Dev Repos\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
+MERGED from [:image_picker_android] D:\Startup Dev Repos\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\Zet\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:24:5-31:19
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\Zet\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:24:5-31:19
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\Zet\.gradle\caches\transforms-3\31201b32770f183f2e9afb71858ba75b\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
@@ -46,22 +46,23 @@ MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\Zet\.gradle\cac
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.7.0] C:\Users\Zet\.gradle\caches\transforms-3\5e083c06c9925c2309f02468fc66e376\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
 	android:name
-		INJECTED from D:\Work\pmx-mobile\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Startup Dev Repos\pmx-mobile\android\app\src\main\AndroidManifest.xml
 manifest
-ADDED from D:\Work\pmx-mobile\android\app\src\main\AndroidManifest.xml:1:1-30:12
-INJECTED from D:\Work\pmx-mobile\android\app\src\main\AndroidManifest.xml:1:1-30:12
-INJECTED from D:\Work\pmx-mobile\android\app\src\main\AndroidManifest.xml:1:1-30:12
-INJECTED from D:\Work\pmx-mobile\android\app\src\main\AndroidManifest.xml:1:1-30:12
-MERGED from D:\Work\pmx-mobile\android\app\src\main\AndroidManifest.xml:1:1-30:12
-MERGED from [:shared_preferences_android] D:\Work\pmx-mobile\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:image_picker_android] D:\Work\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-21:12
-MERGED from [:flutter_plugin_android_lifecycle] D:\Work\pmx-mobile\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:sqflite] D:\Work\pmx-mobile\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:path_provider_android] D:\Work\pmx-mobile\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:qr_code_scanner] D:\Work\pmx-mobile\build\qr_code_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
-MERGED from [:video_player_android] D:\Work\pmx-mobile\build\video_player_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:mobile_scanner] D:\Work\pmx-mobile\build\mobile_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
-MERGED from [:wakelock] D:\Work\pmx-mobile\build\wakelock\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+ADDED from D:\Startup Dev Repos\pmx-mobile\android\app\src\main\AndroidManifest.xml:1:1-30:12
+INJECTED from D:\Startup Dev Repos\pmx-mobile\android\app\src\main\AndroidManifest.xml:1:1-30:12
+INJECTED from D:\Startup Dev Repos\pmx-mobile\android\app\src\main\AndroidManifest.xml:1:1-30:12
+INJECTED from D:\Startup Dev Repos\pmx-mobile\android\app\src\main\AndroidManifest.xml:1:1-30:12
+MERGED from D:\Startup Dev Repos\pmx-mobile\android\app\src\main\AndroidManifest.xml:1:1-30:12
+MERGED from [:shared_preferences_android] D:\Startup Dev Repos\pmx-mobile\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:image_picker_android] D:\Startup Dev Repos\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-21:12
+MERGED from [:flutter_plugin_android_lifecycle] D:\Startup Dev Repos\pmx-mobile\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:sqflite] D:\Startup Dev Repos\pmx-mobile\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:path_provider_android] D:\Startup Dev Repos\pmx-mobile\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:qr_code_scanner] D:\Startup Dev Repos\pmx-mobile\build\qr_code_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:video_player_android] D:\Startup Dev Repos\pmx-mobile\build\video_player_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:mobile_scanner] D:\Startup Dev Repos\pmx-mobile\build\mobile_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:flutter_native_splash] D:\Startup Dev Repos\pmx-mobile\build\flutter_native_splash\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:wakelock] D:\Startup Dev Repos\pmx-mobile\build\wakelock\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\Zet\.gradle\caches\transforms-3\246793f755122fe14a5802655438cb75\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\Zet\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:17:1-33:12
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\Zet\.gradle\caches\transforms-3\31201b32770f183f2e9afb71858ba75b\transformed\material-1.6.1\AndroidManifest.xml:17:1-26:12
@@ -133,45 +134,47 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Zet\.gradle\cach
 MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:17:1-56:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Zet\.gradle\caches\transforms-3\58e3540d7f5a5bac6af9a8f8fab44363\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\Zet\.gradle\caches\transforms-3\d8f3e1c89e2c4602e4285fa769a1adbd\transformed\jetified-image-1.0.0-beta1\AndroidManifest.xml:2:1-9:12
-INJECTED from D:\Work\pmx-mobile\android\app\src\debug\AndroidManifest.xml:1:1-8:12
-INJECTED from D:\Work\pmx-mobile\android\app\src\debug\AndroidManifest.xml:1:1-8:12
-INJECTED from D:\Work\pmx-mobile\android\app\src\debug\AndroidManifest.xml:1:1-8:12
+INJECTED from D:\Startup Dev Repos\pmx-mobile\android\app\src\debug\AndroidManifest.xml:1:1-8:12
+INJECTED from D:\Startup Dev Repos\pmx-mobile\android\app\src\debug\AndroidManifest.xml:1:1-8:12
+INJECTED from D:\Startup Dev Repos\pmx-mobile\android\app\src\debug\AndroidManifest.xml:1:1-8:12
 	package
-		ADDED from D:\Work\pmx-mobile\android\app\src\main\AndroidManifest.xml:2:5-40
-		INJECTED from D:\Work\pmx-mobile\android\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Work\pmx-mobile\android\app\src\debug\AndroidManifest.xml
+		ADDED from D:\Startup Dev Repos\pmx-mobile\android\app\src\main\AndroidManifest.xml:2:5-40
+		INJECTED from D:\Startup Dev Repos\pmx-mobile\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Startup Dev Repos\pmx-mobile\android\app\src\debug\AndroidManifest.xml
 	android:versionName
-		INJECTED from D:\Work\pmx-mobile\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\Work\pmx-mobile\android\app\src\main\AndroidManifest.xml:1:1-30:12
-		INJECTED from D:\Work\pmx-mobile\android\app\src\debug\AndroidManifest.xml
+		INJECTED from D:\Startup Dev Repos\pmx-mobile\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\Startup Dev Repos\pmx-mobile\android\app\src\main\AndroidManifest.xml:1:1-30:12
+		INJECTED from D:\Startup Dev Repos\pmx-mobile\android\app\src\debug\AndroidManifest.xml
 	android:versionCode
-		INJECTED from D:\Work\pmx-mobile\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\Work\pmx-mobile\android\app\src\main\AndroidManifest.xml:1:1-30:12
-		INJECTED from D:\Work\pmx-mobile\android\app\src\debug\AndroidManifest.xml
+		INJECTED from D:\Startup Dev Repos\pmx-mobile\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\Startup Dev Repos\pmx-mobile\android\app\src\main\AndroidManifest.xml:1:1-30:12
+		INJECTED from D:\Startup Dev Repos\pmx-mobile\android\app\src\debug\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\Work\pmx-mobile\android\app\src\main\AndroidManifest.xml:1:11-69
+		ADDED from D:\Startup Dev Repos\pmx-mobile\android\app\src\main\AndroidManifest.xml:1:11-69
 uses-sdk
-INJECTED from D:\Work\pmx-mobile\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\Work\pmx-mobile\android\app\src\main\AndroidManifest.xml
-INJECTED from D:\Work\pmx-mobile\android\app\src\main\AndroidManifest.xml
-MERGED from [:shared_preferences_android] D:\Work\pmx-mobile\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:shared_preferences_android] D:\Work\pmx-mobile\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:image_picker_android] D:\Work\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:image_picker_android] D:\Work\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:flutter_plugin_android_lifecycle] D:\Work\pmx-mobile\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:flutter_plugin_android_lifecycle] D:\Work\pmx-mobile\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:sqflite] D:\Work\pmx-mobile\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:sqflite] D:\Work\pmx-mobile\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:path_provider_android] D:\Work\pmx-mobile\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:path_provider_android] D:\Work\pmx-mobile\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:qr_code_scanner] D:\Work\pmx-mobile\build\qr_code_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:6:5-9:67
-MERGED from [:qr_code_scanner] D:\Work\pmx-mobile\build\qr_code_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:6:5-9:67
-MERGED from [:video_player_android] D:\Work\pmx-mobile\build\video_player_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:video_player_android] D:\Work\pmx-mobile\build\video_player_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:mobile_scanner] D:\Work\pmx-mobile\build\mobile_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:mobile_scanner] D:\Work\pmx-mobile\build\mobile_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:wakelock] D:\Work\pmx-mobile\build\wakelock\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:wakelock] D:\Work\pmx-mobile\build\wakelock\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+INJECTED from D:\Startup Dev Repos\pmx-mobile\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Startup Dev Repos\pmx-mobile\android\app\src\main\AndroidManifest.xml
+INJECTED from D:\Startup Dev Repos\pmx-mobile\android\app\src\main\AndroidManifest.xml
+MERGED from [:shared_preferences_android] D:\Startup Dev Repos\pmx-mobile\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:shared_preferences_android] D:\Startup Dev Repos\pmx-mobile\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:image_picker_android] D:\Startup Dev Repos\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:image_picker_android] D:\Startup Dev Repos\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_plugin_android_lifecycle] D:\Startup Dev Repos\pmx-mobile\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_plugin_android_lifecycle] D:\Startup Dev Repos\pmx-mobile\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:sqflite] D:\Startup Dev Repos\pmx-mobile\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:sqflite] D:\Startup Dev Repos\pmx-mobile\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:path_provider_android] D:\Startup Dev Repos\pmx-mobile\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:path_provider_android] D:\Startup Dev Repos\pmx-mobile\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:qr_code_scanner] D:\Startup Dev Repos\pmx-mobile\build\qr_code_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:6:5-9:67
+MERGED from [:qr_code_scanner] D:\Startup Dev Repos\pmx-mobile\build\qr_code_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:6:5-9:67
+MERGED from [:video_player_android] D:\Startup Dev Repos\pmx-mobile\build\video_player_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:video_player_android] D:\Startup Dev Repos\pmx-mobile\build\video_player_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:mobile_scanner] D:\Startup Dev Repos\pmx-mobile\build\mobile_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:mobile_scanner] D:\Startup Dev Repos\pmx-mobile\build\mobile_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_native_splash] D:\Startup Dev Repos\pmx-mobile\build\flutter_native_splash\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_native_splash] D:\Startup Dev Repos\pmx-mobile\build\flutter_native_splash\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:wakelock] D:\Startup Dev Repos\pmx-mobile\build\wakelock\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:wakelock] D:\Startup Dev Repos\pmx-mobile\build\wakelock\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\Zet\.gradle\caches\transforms-3\246793f755122fe14a5802655438cb75\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\Zet\.gradle\caches\transforms-3\246793f755122fe14a5802655438cb75\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\Zet\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:20:5-22:41
@@ -314,44 +317,44 @@ MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Zet\.gr
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Zet\.gradle\caches\transforms-3\58e3540d7f5a5bac6af9a8f8fab44363\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\Zet\.gradle\caches\transforms-3\d8f3e1c89e2c4602e4285fa769a1adbd\transformed\jetified-image-1.0.0-beta1\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\Zet\.gradle\caches\transforms-3\d8f3e1c89e2c4602e4285fa769a1adbd\transformed\jetified-image-1.0.0-beta1\AndroidManifest.xml:5:5-44
-INJECTED from D:\Work\pmx-mobile\android\app\src\debug\AndroidManifest.xml
-INJECTED from D:\Work\pmx-mobile\android\app\src\debug\AndroidManifest.xml
+INJECTED from D:\Startup Dev Repos\pmx-mobile\android\app\src\debug\AndroidManifest.xml
+INJECTED from D:\Startup Dev Repos\pmx-mobile\android\app\src\debug\AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [:qr_code_scanner] D:\Work\pmx-mobile\build\qr_code_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:9:9-64
+		ADDED from [:qr_code_scanner] D:\Startup Dev Repos\pmx-mobile\build\qr_code_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:9:9-64
 	android:targetSdkVersion
-		INJECTED from D:\Work\pmx-mobile\android\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Work\pmx-mobile\android\app\src\debug\AndroidManifest.xml
+		INJECTED from D:\Startup Dev Repos\pmx-mobile\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Startup Dev Repos\pmx-mobile\android\app\src\debug\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\Work\pmx-mobile\android\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Work\pmx-mobile\android\app\src\debug\AndroidManifest.xml
+		INJECTED from D:\Startup Dev Repos\pmx-mobile\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Startup Dev Repos\pmx-mobile\android\app\src\debug\AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from D:\Work\pmx-mobile\android\app\src\debug\AndroidManifest.xml:7:5-66
+ADDED from D:\Startup Dev Repos\pmx-mobile\android\app\src\debug\AndroidManifest.xml:7:5-66
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Zet\.gradle\caches\transforms-3\dc7c65a3010064290ad75bc9ded151e5\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:26:5-67
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Zet\.gradle\caches\transforms-3\dc7c65a3010064290ad75bc9ded151e5\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:26:5-67
 	android:name
-		ADDED from D:\Work\pmx-mobile\android\app\src\debug\AndroidManifest.xml:7:22-64
+		ADDED from D:\Startup Dev Repos\pmx-mobile\android\app\src\debug\AndroidManifest.xml:7:22-64
 provider#io.flutter.plugins.imagepicker.ImagePickerFileProvider
-ADDED from [:image_picker_android] D:\Work\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
+ADDED from [:image_picker_android] D:\Startup Dev Repos\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
 	android:grantUriPermissions
-		ADDED from [:image_picker_android] D:\Work\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
+		ADDED from [:image_picker_android] D:\Startup Dev Repos\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
 	android:authorities
-		ADDED from [:image_picker_android] D:\Work\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-74
+		ADDED from [:image_picker_android] D:\Startup Dev Repos\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-74
 	android:exported
-		ADDED from [:image_picker_android] D:\Work\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
+		ADDED from [:image_picker_android] D:\Startup Dev Repos\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
 	android:name
-		ADDED from [:image_picker_android] D:\Work\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-82
+		ADDED from [:image_picker_android] D:\Startup Dev Repos\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-82
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [:image_picker_android] D:\Work\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:75
+ADDED from [:image_picker_android] D:\Startup Dev Repos\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:75
 	android:resource
-		ADDED from [:image_picker_android] D:\Work\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-72
+		ADDED from [:image_picker_android] D:\Startup Dev Repos\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-72
 	android:name
-		ADDED from [:image_picker_android] D:\Work\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
+		ADDED from [:image_picker_android] D:\Startup Dev Repos\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
 uses-permission#android.permission.CAMERA
-ADDED from [:mobile_scanner] D:\Work\pmx-mobile\build\mobile_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-65
+ADDED from [:mobile_scanner] D:\Startup Dev Repos\pmx-mobile\build\mobile_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-65
 MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:22:5-65
 MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:22:5-65
 	android:name
-		ADDED from [:mobile_scanner] D:\Work\pmx-mobile\build\mobile_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-62
+		ADDED from [:mobile_scanner] D:\Startup Dev Repos\pmx-mobile\build\mobile_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-62
 uses-library#androidx.window.extensions
 ADDED from [androidx.window:window:1.0.0-beta04] C:\Users\Zet\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
 	android:required

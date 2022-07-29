@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Work\\pmx-mobile\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hy\\values-hy.xml",
+            "outputFile": "D:\\Startup Dev Repos\\pmx-mobile\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hy\\values-hy.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Zet\\.gradle\\caches\\transforms-3\\31201b32770f183f2e9afb71858ba75b\\transformed\\material-1.6.1\\res\\values-hy\\values-hy.xml",

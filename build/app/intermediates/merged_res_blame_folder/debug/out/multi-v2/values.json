@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Work\\pmx-mobile\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "D:\\Startup Dev Repos\\pmx-mobile\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Zet\\.gradle\\caches\\transforms-3\\ef93a1ba37f75189a2233e6e5c6dbde1\\transformed\\drawerlayout-1.1.1\\res\\values\\values.xml",
@@ -183,25 +183,6 @@
                         "endLines": "744,745,746,747,748,749,750,751,752,753,1451,1452,1453,1454,1455,1456,1457,1458,1459,1546,1573,1591,1592,1593,1594,1595,1596,1597,1598,1599,1678,1679,1680,1681,8005,11571,11578,11581",
                         "endColumns": "71,60,63,64,64,53,53,53,58,57,46,48,47,41,48,51,57,49,53,65,69,96,116,95,160,112,85,146,98,146,58,46,143,112,10,22,22,22",
                         "endOffsets": "42949,43010,43074,43139,43204,43258,43312,43366,43425,43483,89839,89888,89936,89978,90027,90079,90137,90187,90241,95891,99238,100855,100972,101068,101229,101342,101428,101575,101674,101821,114019,114066,114210,114323,543418,756127,756492,756616"
-                    }
-                },
-                {
-                    "source": "D:\\Work\\pmx-mobile\\android\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "3,14",
-                        "startColumns": "4,4",
-                        "startOffsets": "176,832",
-                        "endLines": "7,16",
-                        "endColumns": "12,12",
-                        "endOffsets": "483,998"
-                    },
-                    "to": {
-                        "startLines": "4733,4826",
-                        "startColumns": "4,4",
-                        "startOffsets": "324990,331342",
-                        "endLines": "4737,4828",
-                        "endColumns": "12,12",
-                        "endOffsets": "325293,331506"
                     }
                 },
                 {
@@ -405,6 +386,25 @@
                         "endLines": "1384,1415,1450,9751,9755",
                         "endColumns": "56,64,63,24,24",
                         "endOffsets": "86380,87983,89792,651230,651379"
+                    }
+                },
+                {
+                    "source": "D:\\Startup Dev Repos\\pmx-mobile\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "3,14",
+                        "startColumns": "4,4",
+                        "startOffsets": "176,832",
+                        "endLines": "7,16",
+                        "endColumns": "12,12",
+                        "endOffsets": "483,998"
+                    },
+                    "to": {
+                        "startLines": "4733,4826",
+                        "startColumns": "4,4",
+                        "startOffsets": "324990,331342",
+                        "endLines": "4737,4828",
+                        "endColumns": "12,12",
+                        "endOffsets": "325293,331506"
                     }
                 }
             ]

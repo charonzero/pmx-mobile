@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/parser.dart';
+import 'package:pmx/Screen/WrapperScreen/wrapper_screen.dart';
 import 'package:pmx/constant.dart';
 import 'package:pmx/models/login.dart';
 import 'package:pmx/models/order.dart';
+import 'package:pmx/constant.dart';
 
 class AddScreen extends StatefulWidget {
   final String orderid;
@@ -16,16 +18,35 @@ class AddScreen extends StatefulWidget {
 class _AddScreenState extends State<AddScreen> {
   @override
   Widget build(BuildContext context) {
-    var orderId = widget.orderid.split('/')[4];
+    Size size = MediaQuery.of(context).size;
+    var orderId = widget.orderid;
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text('Order ID - ' + orderId),
+          title: Text('Add Order'),
         ),
         extendBody: true,
         body: Center(
-          child: SvgPicture.asset('/assets/images/box.svg'),
-        ),
+            child: Column(
+          children: [
+            SvgPicture.asset(
+              'assets/images/box.svg',
+              width: size.width * .5,
+              color: primarycolor,
+            ),
+            SizedBox(
+              width: double.infinity,
+              height: size.height * 0.005,
+            ),
+            Text(
+              'OrderID : ' + orderId,
+              style: TextStyle(
+                  fontSize: size.width * .05, fontWeight: FontWeight.bold),
+            )
+          ],
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+        )),
         bottomNavigationBar: Container(
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
@@ -51,13 +72,21 @@ class _AddScreenState extends State<AddScreen> {
                           Expanded(
                             child: InkWell(
                                 onTap: () async {
-                                  // Session_data session =
-                                  //     SharedPref().read('session_data');
-                                  // String status =
-                                  //     session.role == 'Admin' ? '3' : '2';
-                                  var statuscode =
-                                      await acceptOrder(orderId, '2', '16');
+                                  var data =
+                                      (await SharedPref().read('session_data'));
+                                  Session_data session =
+                                      Session_data.fromJson(data);
+                                  String status =
+                                      session.role == 'Admin' ? '3' : '2';
+                                  var statuscode = await acceptOrder(orderId,
+                                      status, session.userid.toString());
                                   print(statuscode);
+                                  if (statuscode == 200) {
+                                    Navigator.pop(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return WrapperScreen(title: appname);
+                                    }));
+                                  }
                                 },
                                 child: Container(
                                   alignment: Alignment.center,
@@ -79,7 +108,12 @@ class _AddScreenState extends State<AddScreen> {
                           ),
                           Expanded(
                             child: InkWell(
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.pop(context,
+                                      MaterialPageRoute(builder: (context) {
+                                    return WrapperScreen(title: appname);
+                                  }));
+                                },
                                 child: Container(
                                   alignment: Alignment.center,
                                   decoration: BoxDecoration(

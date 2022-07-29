@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Work\\pmx-mobile\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-iw\\values-iw.xml",
+            "outputFile": "D:\\Startup Dev Repos\\pmx-mobile\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-iw\\values-iw.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Zet\\.gradle\\caches\\transforms-3\\14b221489d9eb05e0e9620522e8c9e12\\transformed\\appcompat-1.4.1\\res\\values-iw\\values-iw.xml",

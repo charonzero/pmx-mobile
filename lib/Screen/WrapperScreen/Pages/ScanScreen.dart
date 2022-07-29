@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:pmx/Screen/WrapperScreen/Pages/AddScreen.dart';
+import 'package:pmx/constant.dart';
+import 'package:pmx/models/server.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 class ScanScreen extends StatefulWidget {
@@ -37,16 +39,12 @@ class _ScanScreenState extends State<ScanScreen> {
       children: <Widget>[
         Positioned.fill(child: _buildQrView(context)),
         Container(
-            child: (result != null)
-                ? Center(
-                    child: Text(
-                        'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}'))
-                : const Center(
-                    child: Text(
-                      'Scan a code',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ))
+            child: const Center(
+          child: Text(
+            'Scan a code',
+            style: TextStyle(color: Colors.white),
+          ),
+        ))
       ],
     );
   }
@@ -73,28 +71,37 @@ class _ScanScreenState extends State<ScanScreen> {
   }
 
   void _onQRViewCreated(QRViewController controller) {
-    if (result == null) {
-      controller.resumeCamera();
-      setState(() {
-        this.controller = controller;
+    try {
+      if (result == null) {
+        controller.resumeCamera();
+        setState(() {
+          this.controller = controller;
+        });
+      }
+      controller.scannedDataStream.listen((scanData) async {
+        setState(() {
+          result = scanData;
+        });
+        var orderId = scanData.code!.split('/')[4];
+        if (scanData.code!.split('/')[2] == server) {
+          AddScreenPageRoute(orderId);
+        } else {
+          setState(() {
+            result = null;
+          });
+        }
       });
+    } catch (err) {
+      print('Error');
     }
+  }
 
-    controller.scannedDataStream.listen((scanData) {
-      setState(() {
-        result = scanData;
-      });
-      controller.stopCamera();
-      controller.dispose();
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => AddScreen(orderid: scanData.code!)),
-      );
-      setState(() {
-        result = null;
-      });
-    });
+  AddScreenPageRoute(orderId) async {
+    controller?.pauseCamera();
+    var value =
+        await Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return AddScreen(orderid: orderId);
+    })).then((value) => controller?.resumeCamera());
   }
 
   void _onPermissionSet(BuildContext context, QRViewController ctrl, bool p) {

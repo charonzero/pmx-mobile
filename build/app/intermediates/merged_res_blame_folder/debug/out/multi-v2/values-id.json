@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Work\\pmx-mobile\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-id\\values-id.xml",
+            "outputFile": "D:\\Startup Dev Repos\\pmx-mobile\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-id\\values-id.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Zet\\.gradle\\caches\\transforms-3\\77be51fb7627331aa2f8ec0f3aaea8ed\\transformed\\jetified-zxing-android-embedded-4.3.0\\res\\values-id\\values-id.xml",
