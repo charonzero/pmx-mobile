@@ -78,14 +78,41 @@ class _AddScreenState extends State<AddScreen> {
                                       Session_data.fromJson(data);
                                   String status =
                                       session.role == 'Admin' ? '3' : '2';
-                                  var statuscode = await acceptOrder(orderId,
-                                      status, session.userid.toString());
-                                  print(statuscode);
+                                  var response = await acceptOrder(orderId,
+                                      status);
+                                  var statuscode = response['statusCode'];
+
                                   if (statuscode == 200) {
                                     Navigator.pop(context,
                                         MaterialPageRoute(builder: (context) {
                                       return WrapperScreen(title: appname);
                                     }));
+                                  } else if (statuscode == 403) {
+                                    showDialog<void>(
+                                      context: context,
+                                      barrierDismissible: false,
+                                      builder: (BuildContext context) {
+                                        return AlertDialog(
+                                          title: const Text('Error'),
+                                          content: SingleChildScrollView(
+                                            child: ListBody(
+                                              children: <Widget>[
+                                                Text(response['msg'])
+                                              ],
+                                            ),
+                                          ),
+                                          actions: <Widget>[
+                                            TextButton(
+                                              child: const Text('Back'),
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
                                   }
                                 },
                                 child: Container(

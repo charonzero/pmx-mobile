@@ -51,13 +51,15 @@ class _InventoryDoneState extends State<InventoryDone>
     setOrders();
   }
 
-  void _showOverlay(BuildContext context) {
+  void _showOverlay(BuildContext context, String orderid) {
     AnimationController controller = AnimationController(
         duration: const Duration(milliseconds: 400), vsync: this);
     showDialog(
       context: context,
       builder: (_) => OrderOverlay(
         controller: controller,
+        orderid: orderid,
+        past: true
       ),
     );
   }
@@ -67,7 +69,7 @@ class _InventoryDoneState extends State<InventoryDone>
     final Size size = MediaQuery.of(context).size;
     String dropdownValue = 'ID';
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 10),
+      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 10),
       child: Column(
         children: [
           Text("Past Packages",
@@ -175,7 +177,7 @@ class _InventoryDoneState extends State<InventoryDone>
                                     order[index].township),
                                 trailing: Icon(Icons.more_vert),
                                 onTap: () {
-                                  _showOverlay(context);
+                                  _showOverlay(context, order[index].orderid);
                                 },
                               ),
                             ));

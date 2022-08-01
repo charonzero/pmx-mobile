@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 const appname = "PMXpress";
 const primarycolor = Color(0xFFe17624);
-const secondarycolor = Color(0xFF1d1a2f);
+const secondarycolor = ui.Color.fromARGB(255, 3, 27, 80);
 
 const cinfo = Color(0xFF17a2b8);
 const csuccess = Color(0xFF28a745);

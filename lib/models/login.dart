@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -43,8 +44,12 @@ class Session_data {
 class SharedPref {
   read(String key) async {
     final prefs = await SharedPreferences.getInstance();
-    return json.decode(prefs.getString(key)!);
-    // return json.decode(prefs.getString(key) ?? ''); better
+    var data = prefs.getString(key);
+    if (data != null) {
+      return jsonDecode(data);
+    } else {
+      return null;
+    }
   }
 
   save(String key, value) async {
@@ -59,23 +64,26 @@ class SharedPref {
 }
 
 Future<int> login(String username, String password) async {
-  //https://05ae60d3-8144-4268-8ceb-f5b3577bd086.mock.pstmn.io/checklogin
-  //'http://192.168.100.163:2000/mlogin'
-  var url = serverurl + '/login';
+  try {
+    var url = serverurl + '/login';
 
-  // await geturl() + "login";
-  var response = await http
-      .post(Uri.parse(url), body: {'username': username, 'password': password});
-  Map<String, dynamic> decoded = jsonDecode(response.body)["userdata"];
-  decoded['token'] = jsonDecode(response.body)["token"];
+    var response = await http.post(Uri.parse(url), body: {
+      'username': username,
+      'password': password
+    }).timeout(const Duration(minutes: 5));
+    
+    if (response.statusCode == 200) {
+      Map<String, dynamic> decoded = jsonDecode(response.body)["userdata"];
+      decoded['token'] = jsonDecode(response.body)["token"];
+      Session_data data = Session_data.fromJson(decoded);
+      (await SharedPreferences.getInstance())
+          .setString('session_data', jsonEncode(data.toJson()));
+    }
 
-  if (response.statusCode == 200) {
-    Session_data data = Session_data.fromJson(decoded);
-    (await SharedPreferences.getInstance())
-        .setString('session_data', jsonEncode(data.toJson()));
+    return response.statusCode;
+  } on TimeoutException catch (err) {
+    return -1;
   }
-
-  return response.statusCode;
 }
 
 Future<bool> logout() async {

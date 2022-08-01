@@ -42,6 +42,7 @@ class ProfileScreen extends StatelessWidget {
                                     radius: 40,
                                     child: CachedNetworkImage(
                                       color: Colors.white,
+                                      httpHeaders: {'Authorization': session.token},
                                       imageUrl: serverurl +
                                           "staffimg/" +
                                           session.userid.toString(),

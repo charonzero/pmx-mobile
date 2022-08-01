@@ -43,19 +43,6 @@ class WelcomeScreen extends StatelessWidget {
                         return const LoginScreen();
                       }));
                     }),
-                SizedBox(
-                  height: size.height * .01,
-                ),
-                RoundButton(
-                    text: Text("Admin Login"),
-                    color: secondarycolor,
-                    bcolor: secondarycolor,
-                    onpress: () {
-                      // Navigator.push(context,
-                      //     MaterialPageRoute(builder: (context) {
-                      //   return const RegisterScreen();
-                      // }));
-                    }),
               ]),
             )
           ],

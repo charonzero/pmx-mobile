@@ -45,13 +45,15 @@ class _InventoryState extends State<Inventory> with TickerProviderStateMixin {
     setOrders();
   }
 
-  void _showOverlay(BuildContext context) {
+  void _showOverlay(BuildContext context, String orderid) {
     AnimationController controller = AnimationController(
         duration: const Duration(milliseconds: 400), vsync: this);
     showDialog(
       context: context,
       builder: (_) => OrderOverlay(
         controller: controller,
+        orderid: orderid,
+        past: false
       ),
     );
   }
@@ -61,7 +63,7 @@ class _InventoryState extends State<Inventory> with TickerProviderStateMixin {
     final Size size = MediaQuery.of(context).size;
     String dropdownValue = 'ID';
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 10),
+      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 10),
       child: Column(
         children: [
           Text("Your Packages",
@@ -163,13 +165,13 @@ class _InventoryState extends State<Inventory> with TickerProviderStateMixin {
                                       color: Colors.grey,
                                     )),
                                 title: Text("OrderID - " +
-                                    order[index].orderid.toString()),
+                                    order[index].orderid),
                                 subtitle: Text(order[index].city +
                                     " / " +
                                     order[index].township),
                                 trailing: Icon(Icons.more_vert),
                                 onTap: () {
-                                  _showOverlay(context);
+                                  _showOverlay(context, order[index].orderid);
                                 },
                               ),
                             ));

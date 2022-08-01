@@ -115,7 +115,6 @@ class _ScanScreenState extends State<ScanScreen> {
 
   @override
   void dispose() {
-    controller!.pauseCamera();
     controller?.dispose();
     super.dispose();
   }
