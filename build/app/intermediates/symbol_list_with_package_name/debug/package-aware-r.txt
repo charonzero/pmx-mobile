@@ -1149,6 +1149,7 @@ color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
 color background_material_light
+color backgroundcolor
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -3140,6 +3141,8 @@ layout zxing_capture
 menu example_menu
 menu example_menu2
 mipmap ic_launcher
+mipmap ic_launcher_adaptive_back
+mipmap ic_launcher_adaptive_fore
 plurals mtrl_badge_content_description
 raw zxing_beep
 string abc_action_bar_home_description

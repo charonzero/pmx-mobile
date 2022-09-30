@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pmx/Screen/WelcomeScreen/LoginRouter.dart';
-import 'package:pmx/Screen/WrapperScreen/wrapper_screen.dart';
 import 'package:pmx/constant.dart';
-
-import 'Screen/WelcomeScreen/WelcomeScreen.dart';
 
 void main() {
   runApp(const MyApp());

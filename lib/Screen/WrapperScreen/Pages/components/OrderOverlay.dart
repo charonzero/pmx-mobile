@@ -1,6 +1,8 @@
+// ignore_for_file: file_names, prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 import 'package:pmx/constant.dart';
+import 'package:pmx/models/login.dart';
 import 'package:pmx/models/order.dart';
 
 class OrderOverlay extends StatefulWidget {
@@ -22,519 +24,160 @@ class OrderOverlay extends StatefulWidget {
 class OrderOverlayState extends State<OrderOverlay> {
   Orders? order;
   bool loading = true;
-  bool isLoading = false;
-  late Animation<double> opacityAnimation;
-  Tween<double> opacityTween = Tween<double>(begin: 0.0, end: 1.0);
-  Tween<double> marginTopTween = Tween<double>(begin: -50, end: 0);
-  late Animation<double> marginTopAnimation;
-  late AnimationStatus animationStatus;
-
+  bool isLoading = true;
+  String role = "";
   getorderdetails() async {
     Orders response = await getOrderDetails(widget.orderid);
+    var session = await SharedPref().read('session_data');
     setState(() {
+      role = session['role'].toString();
       order = response;
-      loading = false;
+      isLoading = false;
     });
   }
 
   @override
   void initState() {
+    isLoading = true;
     getorderdetails();
     super.initState();
-
-    marginTopAnimation = marginTopTween.animate(widget.controller)
-      ..addListener(() {
-        animationStatus = widget.controller.status;
-
-        if (animationStatus == AnimationStatus.dismissed) {
-          Navigator.of(context).pop();
-        }
-
-        if (mounted) {
-          setState(() {});
-        }
-      });
-    widget.controller.forward();
   }
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
-    return FadeTransition(
-      opacity: opacityTween.animate(widget.controller),
-      child: WillPopScope(
-        onWillPop: () async {
-          await widget.controller.reverse();
-          return true;
-        },
-        child: isLoading
-            ? Center(
-                child: const CircularProgressIndicator(
-                  color: primarycolor,
+    setState(() {});
+    Size size = MediaQuery.of(context).size;
+    if (isLoading) {
+      return const Center(
+        child: CircularProgressIndicator(),
+      );
+    } else {
+      return Material(
+        color: Colors.transparent,
+        child: Container(
+          height: size.height,
+          width: double.infinity,
+          color: Colors.black54,
+          child: Stack(
+            alignment: AlignmentDirectional.bottomCenter,
+            children: <Widget>[
+              Positioned.fill(
+                child: GestureDetector(
+                    behavior: HitTestBehavior.translucent,
+                    onTap: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Container(
+                        color: Colors.black54,
+                        child: Stack(
+                          alignment: AlignmentDirectional.topCenter,
+                          children: const [],
+                        ))),
+              ),
+              Container(
+                width: double.infinity,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20)),
+                  color: Colors.white,
+                ),
+                height: size.height * .6,
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: size.height * 0.02,
+                      ),
+                      Text(
+                        "Order ID: " + order!.orderid,
+                        style: const TextStyle(
+                            color: primarycolor,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700),
+                      ),
+                      Text(order!.status.toString()),
+                      SizedBox(
+                        height: size.height * 0.04,
+                      ),
+                      orderDetail("Customer Name", order!.CName, size),
+                      orderDetail("Phone", order!.CPhone, size),
+                      orderDetail("Remark", order!.remark, size),
+                      const Divider(
+                        height: 10,
+                      ),
+                      orderDetail(
+                          "Address",
+                          order!.CAddress + '040123501512515125161621626166',
+                          size),
+                      orderDetail("Township", order!.township, size),
+                      orderDetail("City", order!.city, size),
+                      const Divider(
+                        thickness: 2,
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 2.5),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              width: size.width * .35,
+                              child: const Text('Total:',
+                                  style: TextStyle(
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.w700)),
+                            ),
+                            Flexible(
+                              child: Text(order!.total.toString() + " MMK",
+                                  style: const TextStyle(
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.w700)),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const Divider(
+                        thickness: 2,
+                        height: 20,
+                      ),
+                      const Spacer(),
+                      if (role == "Driver")
+                        OverlayButtons(
+                          orderid: order!.orderid,
+                        )
+                      else
+                        Container()
+                    ],
+                  ),
                 ),
               )
-            : Scaffold(
-                backgroundColor: Colors.transparent,
-                body: Stack(children: [
-                  Positioned.fill(
-                      child: GestureDetector(
-                    onTap: () {
-                      widget.controller.reverse();
-                    },
-                    behavior: HitTestBehavior.opaque,
-                  )),
-                  Positioned(
-                    top: size.height * .08,
-                    left: marginTopAnimation.value,
-                    child: Container(
-                      height: size.height * .8,
-                      width: size.width,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Padding(
-                              padding: const EdgeInsets.only(bottom: 5),
-                              child: Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Container(
-                                      height: size.height * 0.7,
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: [
-                                          Container(
-                                              height: size.height * 0.1,
-                                              color: secondarycolor,
-                                              alignment: Alignment.center,
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceEvenly,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.center,
-                                                children: [
-                                                  const Text(
-                                                    'Order Details',
-                                                    style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        letterSpacing: 0.75,
-                                                        fontSize: 22),
-                                                  ),
-                                                  Image.asset(
-                                                    'assets/images/minilogo.png',
-                                                    height: size.height * 0.08,
-                                                  )
-                                                ],
-                                              )),
-                                          Container(
-                                            height: 5,
-                                            width: size.width,
-                                            decoration: BoxDecoration(
-                                                color: primarycolor,
-                                                borderRadius:
-                                                    BorderRadius.circular(20)),
-                                          ),
-                                          Container(
-                                              width: size.width - 20,
-                                              height: size.height * 0.56,
-                                              child: loading
-                                                  ? Center(
-                                                      child: Container(
-                                                        height: 50,
-                                                        width: 50,
-                                                        child:
-                                                            const CircularProgressIndicator(
-                                                                color:
-                                                                    primarycolor),
-                                                      ),
-                                                    )
-                                                  : Container(
-                                                      padding: EdgeInsets.only(
-                                                          left:
-                                                              size.width * 0.02,
-                                                          right: size.width *
-                                                              0.02),
-                                                      child: Column(
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceEvenly,
-                                                        children: [
-                                                          Row(
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .center,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .spaceAround,
-                                                            children: [
-                                                              Container(
-                                                                alignment: Alignment
-                                                                    .centerLeft,
-                                                                height: 40,
-                                                                width: MediaQuery.of(
-                                                                            context)
-                                                                        .size
-                                                                        .width *
-                                                                    0.45,
-                                                                child: Column(
-                                                                  crossAxisAlignment:
-                                                                      CrossAxisAlignment
-                                                                          .start,
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .spaceEvenly,
-                                                                  children: [
-                                                                    const Text(
-                                                                        'OrderId',
-                                                                        style: TextStyle(
-                                                                            letterSpacing:
-                                                                                0.25,
-                                                                            fontWeight:
-                                                                                FontWeight.w600,
-                                                                            fontSize: 15)),
-                                                                    Text(
-                                                                      order!
-                                                                          .orderid,
-                                                                      style: const TextStyle(
-                                                                          letterSpacing:
-                                                                              0.25,
-                                                                          fontWeight: FontWeight
-                                                                              .w600,
-                                                                          fontSize:
-                                                                              15),
-                                                                    )
-                                                                  ],
-                                                                ),
-                                                              ),
-                                                              Container(
-                                                                alignment: Alignment
-                                                                    .centerLeft,
-                                                                height: 40,
-                                                                width: MediaQuery.of(
-                                                                            context)
-                                                                        .size
-                                                                        .width *
-                                                                    0.45,
-                                                                child: Column(
-                                                                  crossAxisAlignment:
-                                                                      CrossAxisAlignment
-                                                                          .start,
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .spaceEvenly,
-                                                                  children: [
-                                                                    const Text(
-                                                                        'City',
-                                                                        style: TextStyle(
-                                                                            letterSpacing:
-                                                                                0.25,
-                                                                            fontWeight:
-                                                                                FontWeight.w600,
-                                                                            fontSize: 15)),
-                                                                    Text(
-                                                                      order!
-                                                                          .CName,
-                                                                      style: const TextStyle(
-                                                                          letterSpacing:
-                                                                              0.25,
-                                                                          fontWeight: FontWeight
-                                                                              .w600,
-                                                                          fontSize:
-                                                                              15),
-                                                                    )
-                                                                  ],
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                          Row(
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .center,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .spaceAround,
-                                                            children: [
-                                                              Container(
-                                                                alignment: Alignment
-                                                                    .centerLeft,
-                                                                height: 40,
-                                                                width: MediaQuery.of(
-                                                                            context)
-                                                                        .size
-                                                                        .width *
-                                                                    0.45,
-                                                                child: Expanded(
-                                                                  child: Column(
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .spaceEvenly,
-                                                                    children: [
-                                                                      const Text(
-                                                                          'Remark',
-                                                                          style: TextStyle(
-                                                                              letterSpacing: 0.25,
-                                                                              fontWeight: FontWeight.w600,
-                                                                              fontSize: 15)),
-                                                                      Text(
-                                                                        order!
-                                                                            .city,
-                                                                        style: const TextStyle(
-                                                                            letterSpacing:
-                                                                                0.25,
-                                                                            fontWeight:
-                                                                                FontWeight.w600,
-                                                                            fontSize: 15),
-                                                                      )
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                              Container(
-                                                                alignment: Alignment
-                                                                    .centerLeft,
-                                                                height: 40,
-                                                                width: MediaQuery.of(
-                                                                            context)
-                                                                        .size
-                                                                        .width *
-                                                                    0.45,
-                                                                child: Column(
-                                                                  crossAxisAlignment:
-                                                                      CrossAxisAlignment
-                                                                          .start,
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .spaceEvenly,
-                                                                  children: [
-                                                                    const Text(
-                                                                        'Township',
-                                                                        style: TextStyle(
-                                                                            letterSpacing:
-                                                                                0.25,
-                                                                            fontWeight:
-                                                                                FontWeight.w600,
-                                                                            fontSize: 15)),
-                                                                    Text(
-                                                                      order!
-                                                                          .township,
-                                                                      style: const TextStyle(
-                                                                          letterSpacing:
-                                                                              0.25,
-                                                                          fontWeight: FontWeight
-                                                                              .w600,
-                                                                          fontSize:
-                                                                              15),
-                                                                    )
-                                                                  ],
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                          Row(
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .center,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .spaceEvenly,
-                                                            children: [
-                                                              Container(
-                                                                alignment: Alignment
-                                                                    .centerLeft,
-                                                                height: 40,
-                                                                width: MediaQuery.of(
-                                                                            context)
-                                                                        .size
-                                                                        .width *
-                                                                    0.45,
-                                                                child: Column(
-                                                                  crossAxisAlignment:
-                                                                      CrossAxisAlignment
-                                                                          .start,
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .spaceEvenly,
-                                                                  children: [
-                                                                    const Text(
-                                                                        'Customer Name',
-                                                                        style: TextStyle(
-                                                                            letterSpacing:
-                                                                                0.25,
-                                                                            fontWeight:
-                                                                                FontWeight.w600,
-                                                                            fontSize: 15)),
-                                                                    Text(
-                                                                      order!
-                                                                          .remark,
-                                                                      style: const TextStyle(
-                                                                          letterSpacing:
-                                                                              0.25,
-                                                                          fontWeight: FontWeight
-                                                                              .w600,
-                                                                          fontSize:
-                                                                              15),
-                                                                    )
-                                                                  ],
-                                                                ),
-                                                              ),
-                                                              Container(
-                                                                alignment: Alignment
-                                                                    .centerLeft,
-                                                                height: 40,
-                                                                width: MediaQuery.of(
-                                                                            context)
-                                                                        .size
-                                                                        .width *
-                                                                    0.45,
-                                                                child: Column(
-                                                                  crossAxisAlignment:
-                                                                      CrossAxisAlignment
-                                                                          .start,
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .spaceEvenly,
-                                                                  children: [
-                                                                    const Text(
-                                                                        'Total',
-                                                                        style: TextStyle(
-                                                                            letterSpacing:
-                                                                                0.25,
-                                                                            fontWeight:
-                                                                                FontWeight.w600,
-                                                                            fontSize: 15)),
-                                                                    Text(
-                                                                      order!
-                                                                          .total
-                                                                          .toString(),
-                                                                      style: const TextStyle(
-                                                                          letterSpacing:
-                                                                              0.25,
-                                                                          fontWeight: FontWeight
-                                                                              .w600,
-                                                                          fontSize:
-                                                                              15),
-                                                                    )
-                                                                  ],
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                          Column(
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .spaceEvenly,
-                                                            children: [
-                                                              const Text(
-                                                                  'Customer Phone',
-                                                                  style:
-                                                                      TextStyle(
-                                                                    letterSpacing:
-                                                                        0.25,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                    fontSize:
-                                                                        15,
-                                                                  )),
-                                                              Text(
-                                                                order!.CPhone,
-                                                                style: const TextStyle(
-                                                                    letterSpacing:
-                                                                        0.25,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                    fontSize:
-                                                                        15),
-                                                              )
-                                                            ],
-                                                          ),
-                                                          Column(
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .spaceEvenly,
-                                                            children: [
-                                                              const Text(
-                                                                  'Customer Address',
-                                                                  style: TextStyle(
-                                                                      letterSpacing:
-                                                                          0.25,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w600,
-                                                                      fontSize:
-                                                                          15)),
-                                                              Text(
-                                                                order!.CAddress,
-                                                                style: const TextStyle(
-                                                                    letterSpacing:
-                                                                        0.25,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                    fontSize:
-                                                                        15),
-                                                              )
-                                                            ],
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    )),
-                                        ],
-                                      )))),
-                          widget.past
-                              ? Container(
-                                  height: 50,
-                                  width: 100,
-                                  alignment: Alignment.center,
-                                  // margin: EdgeInsets.only(top: 10),
-                                  decoration: const BoxDecoration(
-                                    color: Colors.white,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        blurRadius: 5.5 ,
-                                        color: Colors.black54,
-                                        offset: Offset(3, 4),
-                                        )
-                                      ],
-                                    borderRadius: BorderRadius.all(Radius.circular(10))),
-                                  child: loading
-                                      ? const Center(
-                                          child: CircularProgressIndicator(
-                                            color: primarycolor,
-                                          ),
-                                        )
-                                      : Text(order!.status ?? "",
-                                          style: const TextStyle(
-                                              color: secondarycolor,
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.bold)),
-                                )
-                              : OverlayButtons(orderid: widget.orderid)
-                        ],
-                      ),
-                    ),
-                  ),
-                ]),
-              ),
+            ],
+          ),
+        ),
+      );
+    }
+  }
+
+  Padding orderDetail(String text, String value, Size size) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 2.5),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          SizedBox(
+            width: size.width * .35,
+            child: Text(text,
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+          ),
+          Flexible(
+            child: Text(value,
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+          ),
+        ],
       ),
     );
   }
@@ -546,6 +189,7 @@ class OrderOverlayState extends State<OrderOverlay> {
   }
 }
 
+// ignore: must_be_immutable
 class OverlayButtons extends StatelessWidget {
   String orderid = "";
   OverlayButtons({Key? key, required this.orderid}) : super(key: key);
@@ -558,16 +202,11 @@ class OverlayButtons extends StatelessWidget {
       fontSize: 16,
     );
 
-    const BoxDecoration boxdecor = BoxDecoration(
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 5.5 ,
-            color: Colors.black54,
-            offset: Offset(3, 4),
-            )
-          ],
-        borderRadius: BorderRadius.all(Radius.circular(10)));
+    BoxDecoration boxdecor = BoxDecoration(
+        borderRadius: const BorderRadius.all(
+          Radius.circular(10),
+        ),
+        border: Border.all(color: Colors.black12, width: 2));
 
     final Size size = MediaQuery.of(context).size;
 
@@ -658,9 +297,11 @@ Future<bool> confirmDialog(BuildContext context, String status) async {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              padding: EdgeInsets.only(top: 10),
+              decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(20))),
+              padding: const EdgeInsets.only(top: 10),
               child: Text(
-                'This parcel will be ${status}!',
+                'This parcel will be $status!',
                 style:
                     const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
@@ -678,9 +319,11 @@ Future<bool> confirmDialog(BuildContext context, String status) async {
                         Navigator.pop(context, true);
                       },
                       child: Container(
+                        decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.all(
+                          Radius.circular(20),
+                        )),
                         alignment: Alignment.center,
-                        decoration:
-                            BoxDecoration(border: Border.all(width: 0.5)),
                         child: const Text('Proceed'),
                       ),
                     ),
@@ -691,9 +334,11 @@ Future<bool> confirmDialog(BuildContext context, String status) async {
                         Navigator.pop(context, false);
                       },
                       child: Container(
+                        decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.all(
+                          Radius.circular(20),
+                        )),
                         alignment: Alignment.center,
-                        decoration:
-                            BoxDecoration(border: Border.all(width: 0.5)),
                         child: const Text('Cancel'),
                       ),
                     ),
@@ -708,6 +353,7 @@ Future<bool> confirmDialog(BuildContext context, String status) async {
   );
 }
 
+// ignore: must_be_immutable
 class ShowAlertDialog extends StatefulWidget {
   String orderid;
   String status;
@@ -723,7 +369,6 @@ class _ShowAlertDialogState extends State<ShowAlertDialog> {
   var response;
   @override
   void initState() {
-    // TODO: implement initState
     acceptOrder(widget.orderid, widget.status).then((value) => {
           setState(() {
             response = value;
@@ -738,7 +383,9 @@ class _ShowAlertDialogState extends State<ShowAlertDialog> {
   Widget build(BuildContext context) {
     return isLoading
         ? Center(
-            child: SizedBox(
+            child: Container(
+                decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
                 height: MediaQuery.of(context).size.width * 0.2,
                 width: MediaQuery.of(context).size.width * 0.2,
                 child: const CircularProgressIndicator(
@@ -750,7 +397,9 @@ class _ShowAlertDialogState extends State<ShowAlertDialog> {
                 Text(response['statusCode'] == 200 ? 'Successful' : 'Failed'),
             content: Text(response['msg']),
             actions: [
-              SizedBox(
+              Container(
+                  decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(40))),
                   height: 40,
                   width: MediaQuery.of(context).size.width,
                   child: InkWell(

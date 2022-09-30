@@ -1,9 +1,9 @@
+// ignore_for_file: file_names, non_constant_identifier_names
+
 import 'dart:developer';
 import 'dart:io';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:pmx/Screen/WrapperScreen/Pages/AddScreen.dart';
-import 'package:pmx/constant.dart';
 import 'package:pmx/models/server.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
@@ -38,13 +38,12 @@ class _ScanScreenState extends State<ScanScreen> {
     return Stack(
       children: <Widget>[
         Positioned.fill(child: _buildQrView(context)),
-        Container(
-            child: const Center(
+        const Center(
           child: Text(
             'Scan a code',
             style: TextStyle(color: Colors.white),
           ),
-        ))
+        )
       ],
     );
   }
@@ -92,14 +91,13 @@ class _ScanScreenState extends State<ScanScreen> {
         }
       });
     } catch (err) {
-      print('Error');
+      result = null;
     }
   }
 
   AddScreenPageRoute(orderId) async {
     controller?.pauseCamera();
-    var value =
-        await Navigator.push(context, MaterialPageRoute(builder: (context) {
+    await Navigator.push(context, MaterialPageRoute(builder: (context) {
       return AddScreen(orderid: orderId);
     })).then((value) => controller?.resumeCamera());
   }

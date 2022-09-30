@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pmx/constant.dart';
 
 class Background extends StatelessWidget {
   final Widget child;
@@ -8,20 +9,20 @@ class Background extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: sized_box_for_whitespace
     return Container(
+      color: secondarycolor,
       height: size.height,
       width: double.infinity,
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
-          Positioned.fill(
-            child: Image.asset(
-              "assets/images/welcomeflat.jpg",
-              width: size.width,
-              fit: BoxFit.cover,
-            ),
-          ),
+          // Positioned.fill(
+          //   child: Image.asset(
+          //     "assets/images/welcomeflat.jpg",
+          //     width: size.width,
+          //     fit: BoxFit.cover,
+          //   ),
+          // ),
           child
         ],
       ),

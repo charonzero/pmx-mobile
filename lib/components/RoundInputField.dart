@@ -40,7 +40,7 @@ class RoundedInputField extends StatelessWidget {
           return null;
         },
         decoration: InputDecoration(
-          errorStyle: TextStyle(
+          errorStyle: const TextStyle(
             fontSize: 10.0,
           ),
           prefixIcon: Padding(
@@ -56,7 +56,7 @@ class RoundedInputField extends StatelessWidget {
               borderRadius: BorderRadius.circular(10.0),
               borderSide: BorderSide.none),
           focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.black87, width: 0),
+              borderSide: const BorderSide(color: Colors.black87, width: 0),
               borderRadius: BorderRadius.circular(10.0)),
           filled: true,
           contentPadding:

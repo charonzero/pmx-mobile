@@ -1,4 +1,5 @@
-import 'package:flutter/services.dart';
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -24,39 +25,39 @@ class Status {
   }
 
   Map<String, double> toMap() {
-    Map<String, double> status = Map<String, double>();
-    status['Delivered'] = this.Delivered;
-    status['Cancel'] = this.Cancel;
-    status['Rescheduled'] = this.Rescheduled;
-    status['Null'] = this.Null;
+    Map<String, double> status = <String, double>{};
+    status['Delivered'] = Delivered;
+    status['Cancel'] = Cancel;
+    status['Rescheduled'] = Rescheduled;
+    status['Null'] = Null;
     return status;
   }
 
+  @override
   String toString() {
-    return this.Delivered.toString() +
+    return Delivered.toString() +
         "," +
-        this.Cancel.toString() +
+        Cancel.toString() +
         "," +
-        this.Rescheduled.toString() +
+        Rescheduled.toString() +
         "," +
-        this.Null.toString();
+        Null.toString();
   }
 }
 
 Future<Map<String, double>> fetchStatus(bool a) async {
-  Session_data session = SharedPref().read('session_data');
+  SessionData session = SharedPref().read('session_data');
   var userid = session.userid;
   // String s =  a ? 'getPerformanceStatus': 'getTotalStatus';'http://192.168.100.106:2000/'
   // https://05ae60d3-8144-4268-8ceb-f5b3577bd086.mock.pstmn.io/
   String s = a ? 'getDriverPerformancetdy' : 'getDriverPerformance';
-  
+
   String token = session.token;
   var fetchorders = await http.post(
     Uri.parse(serverurl + s),
     headers: {'authorization': token},
     body: {'userid': userid.toString()},
   );
-  print(fetchorders.body);
   final decoded = jsonDecode(fetchorders.body);
   Status status = Status.fromjson(decoded['driverPerformance']);
   return status.toMap();

@@ -44,6 +44,9 @@ class _RoundedPasswordFieldState extends State<RoundedPasswordField> {
         return null;
       },
       decoration: InputDecoration(
+        errorStyle: const TextStyle(
+          fontSize: 10.0,
+        ),
         suffixIcon: IconButton(
             onPressed: () {
               _toggle();
@@ -65,7 +68,7 @@ class _RoundedPasswordFieldState extends State<RoundedPasswordField> {
             borderRadius: BorderRadius.circular(10.0),
             borderSide: BorderSide.none),
         focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.black87, width: 0),
+            borderSide: const BorderSide(color: Colors.black87, width: 0),
             borderRadius: BorderRadius.circular(10.0)),
         filled: true,
         contentPadding:

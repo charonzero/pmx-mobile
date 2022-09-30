@@ -1,19 +1,17 @@
+// ignore_for_file: non_constant_identifier_names, annotate_overrides
+
 import 'dart:convert';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
-import 'package:flutter/foundation.dart';
 import 'package:pmx/models/login.dart';
 import 'package:pmx/models/server.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class Orders extends Equatable {
   final int total;
-  // ignore: non_constant_identifier_names
   final String orderid, CName, CAddress, CPhone, remark, township, city;
   final String? status;
 
-  Orders(
+  const Orders(
       {required this.orderid,
       required this.CName,
       required this.CAddress,
@@ -22,9 +20,7 @@ class Orders extends Equatable {
       required this.township,
       required this.city,
       required this.total,
-      this.status
-      }
-      );
+      this.status});
 
   factory Orders.fromJson(Map<String, dynamic> json) {
     return Orders(
@@ -36,8 +32,7 @@ class Orders extends Equatable {
         township: json['township'],
         city: json['city'],
         total: json['total'],
-        status: json['status']
-        );
+        status: json['status']);
   }
 
   List<Object> get props => [orderid];
@@ -48,9 +43,9 @@ class Orders extends Equatable {
 Future<List<Orders>> fetchOrders(String userid) async {
   List<Orders> orders = [];
   var data = await SharedPref().read('session_data');
-  Session_data session = Session_data.fromJson(data);
-  bool isAdmin = session.role == 'Admin' || session.role == 'Super Admin';
-
+  SessionData session = SessionData.fromJson(data);
+  // bool isAdmin = session.role == 'Admin' || session.role == 'Super Admin';
+  bool isAdmin = !(session.role == 'Driver');
   String url =
       // serverurl + (isAdmin ? "getAdminOrdersPast" : "getDeliOrdersPast");
       serverurl + 'getDeliOrders';
@@ -75,7 +70,7 @@ Future<List<Orders>> fetchPastOrders(String userid) async {
   List<Orders> orders = [];
   //'https://05ae60d3-8144-4268-8ceb-f5b3577bd086.mock.pstmn.io/getParcels'"http://192.168.100.106:2000/getDeliOrdersPast"
   var data = await SharedPref().read('session_data');
-  Session_data session = Session_data.fromJson(data);
+  SessionData session = SessionData.fromJson(data);
   bool isAdmin = session.role == 'Admin' || session.role == 'Super Admin';
 
   String url =
@@ -102,7 +97,7 @@ Future<Orders> getOrderDetails(String orderid) async {
   //http://192.168.100.106:2000/getOrderDetails
   var url = serverurl + "getOrderDetails";
   var data = await SharedPref().read('session_data');
-  Session_data session = Session_data.fromJson(data);
+  SessionData session = SessionData.fromJson(data);
   String token = session.token;
   var fetchorders = await http.post(
     Uri.parse(url),
@@ -120,8 +115,8 @@ Future<Map<String, dynamic>> acceptOrder(
   //'https://05ae60d3-8144-4268-8ceb-f5b3577bd086.mock.pstmn.io/acceptOrder'
   //"http://192.168.100.106:2000/takeOrder"
   var url = serverurl + "takeOrder";
-  Session_data session =
-      Session_data.fromJson(await SharedPref().read('session_data'));
+  SessionData session =
+      SessionData.fromJson(await SharedPref().read('session_data'));
   //Session_data.fromJson(await SharedPref().read('session_data'));
   String token = session.token;
   var fetchorders = await http.post(

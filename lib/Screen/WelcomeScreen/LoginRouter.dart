@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:pmx/Screen/WelcomeScreen/WelcomeScreen.dart';
 import 'package:pmx/Screen/WrapperScreen/wrapper_screen.dart';
@@ -14,9 +16,9 @@ class LoginRouter extends StatelessWidget {
         future: SharedPref().read('sessiondata'),
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           if (snapshot.hasData) {
-            return WrapperScreen(title: appname);
+            return const WrapperScreen(title: appname);
           } else {
-            return WelcomeScreen();
+            return const WelcomeScreen();
           }
         });
   }

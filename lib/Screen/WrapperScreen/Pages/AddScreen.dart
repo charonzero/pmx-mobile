@@ -1,11 +1,11 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_svg/parser.dart';
 import 'package:pmx/Screen/WrapperScreen/wrapper_screen.dart';
 import 'package:pmx/constant.dart';
 import 'package:pmx/models/login.dart';
 import 'package:pmx/models/order.dart';
-import 'package:pmx/constant.dart';
 
 class AddScreen extends StatefulWidget {
   final String orderid;
@@ -23,7 +23,7 @@ class _AddScreenState extends State<AddScreen> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text('Add Order'),
+          title: const Text('Add Order'),
         ),
         extendBody: true,
         body: Center(
@@ -74,18 +74,19 @@ class _AddScreenState extends State<AddScreen> {
                                 onTap: () async {
                                   var data =
                                       (await SharedPref().read('session_data'));
-                                  Session_data session =
-                                      Session_data.fromJson(data);
+                                  SessionData session =
+                                      SessionData.fromJson(data);
                                   String status =
-                                      session.role == 'Admin' ? '3' : '2';
-                                  var response = await acceptOrder(orderId,
-                                      status);
+                                      session.role == 'Admin' || session.role == 'Super Admin' ? '3' : '2';
+                                  var response =
+                                      await acceptOrder(orderId, status);
                                   var statuscode = response['statusCode'];
 
                                   if (statuscode == 200) {
                                     Navigator.pop(context,
                                         MaterialPageRoute(builder: (context) {
-                                      return WrapperScreen(title: appname);
+                                      return const WrapperScreen(
+                                          title: appname);
                                     }));
                                   } else if (statuscode == 403) {
                                     showDialog<void>(
@@ -106,13 +107,14 @@ class _AddScreenState extends State<AddScreen> {
                                               child: const Text('Back'),
                                               onPressed: () {
                                                 Navigator.of(context).pop();
-                                                Navigator.of(context).pop();
                                               },
                                             ),
                                           ],
                                         );
                                       },
-                                    );
+                                    ).then((val) {
+                                      Navigator.of(context).pop();
+                                    });
                                   }
                                 },
                                 child: Container(
@@ -136,10 +138,11 @@ class _AddScreenState extends State<AddScreen> {
                           Expanded(
                             child: InkWell(
                                 onTap: () {
-                                  Navigator.pop(context,
-                                      MaterialPageRoute(builder: (context) {
-                                    return WrapperScreen(title: appname);
-                                  }));
+                                  // Navigator.pop(context,
+                                  //     MaterialPageRoute(builder: (context) {
+                                  //   return const WrapperScreen(title: appname);
+                                  // }));
+                                  Navigator.pop(context, true);
                                 },
                                 child: Container(
                                   alignment: Alignment.center,

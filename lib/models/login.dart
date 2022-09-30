@@ -1,25 +1,23 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart';
 import 'package:pmx/models/server.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 
-class Session_data {
+class SessionData {
   final String username;
   final int userid;
   final String role;
   final String token;
 
-  Session_data(
+  SessionData(
       {required this.username,
       required this.userid,
       required this.role,
       required this.token});
 
-  factory Session_data.fromJson(Map<String, dynamic> json) {
-    return Session_data(
+  factory SessionData.fromJson(Map<String, dynamic> json) {
+    return SessionData(
       username: json['username'],
       userid: json['userid'],
       role: json['role'],
@@ -36,6 +34,7 @@ class Session_data {
     };
   }
 
+  @override
   String toString() {
     return "{ username: $username, userid: $userid }";
   }
@@ -70,18 +69,18 @@ Future<int> login(String username, String password) async {
     var response = await http.post(Uri.parse(url), body: {
       'username': username,
       'password': password
-    }).timeout(const Duration(minutes: 5));
-    
+    }).timeout(const Duration(seconds: 15));
+
     if (response.statusCode == 200) {
       Map<String, dynamic> decoded = jsonDecode(response.body)["userdata"];
       decoded['token'] = jsonDecode(response.body)["token"];
-      Session_data data = Session_data.fromJson(decoded);
+      SessionData data = SessionData.fromJson(decoded);
       (await SharedPreferences.getInstance())
           .setString('session_data', jsonEncode(data.toJson()));
     }
 
     return response.statusCode;
-  } on TimeoutException catch (err) {
+  } on TimeoutException {
     return -1;
   }
 }
