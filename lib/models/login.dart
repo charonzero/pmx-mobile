@@ -9,20 +9,22 @@ class SessionData {
   final int userid;
   final String role;
   final String token;
+  final String jwt;
 
   SessionData(
       {required this.username,
       required this.userid,
       required this.role,
-      required this.token});
+      required this.token,
+      required this.jwt});
 
   factory SessionData.fromJson(Map<String, dynamic> json) {
     return SessionData(
-      username: json['username'],
-      userid: json['userid'],
-      role: json['role'],
-      token: json['token'],
-    );
+        username: json['username'],
+        userid: json['userid'],
+        role: json['role'],
+        token: json['token'],
+        jwt: json['jwt'] ?? '');
   }
 
   Map<String, dynamic> toJson() {
@@ -30,7 +32,8 @@ class SessionData {
       'username': username,
       'userid': userid,
       'role': role,
-      'token': token
+      'token': token,
+      'jwt': jwt
     };
   }
 
@@ -70,17 +73,20 @@ Future<int> login(String username, String password) async {
       'username': username,
       'password': password
     }).timeout(const Duration(seconds: 15));
-
     if (response.statusCode == 200) {
       Map<String, dynamic> decoded = jsonDecode(response.body)["userdata"];
       decoded['token'] = jsonDecode(response.body)["token"];
+      decoded['jwt'] = jsonDecode(response.body)['jwt'];
       SessionData data = SessionData.fromJson(decoded);
       (await SharedPreferences.getInstance())
           .setString('session_data', jsonEncode(data.toJson()));
     }
-
+    print(response.statusCode);
     return response.statusCode;
   } on TimeoutException {
+    return -1;
+  } catch (err) {
+    print(err);
     return -1;
   }
 }

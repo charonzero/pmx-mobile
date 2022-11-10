@@ -21,8 +21,8 @@ class ProfileButton extends StatelessWidget {
       height: size.height * 0.07,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: Colors.white, //change background color of button
-          onPrimary: primarycolor, //change text color of button
+          primary: Colors.white,
+          onPrimary: primarycolor,
           shape: const RoundedRectangleBorder(
             side: BorderSide(
               color: Colors.grey,

@@ -46,6 +46,11 @@ class _InventoryState extends State<Inventory> with TickerProviderStateMixin {
     setOrders();
   }
 
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   void _showOverlay(BuildContext context, String orderid) {
     AnimationController controller = AnimationController(
         duration: const Duration(milliseconds: 400), vsync: this);

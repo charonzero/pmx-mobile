@@ -23,7 +23,6 @@ class OrderOverlay extends StatefulWidget {
 
 class OrderOverlayState extends State<OrderOverlay> {
   Orders? order;
-  bool loading = true;
   bool isLoading = true;
   String role = "";
   getorderdetails() async {
@@ -38,7 +37,7 @@ class OrderOverlayState extends State<OrderOverlay> {
 
   @override
   void initState() {
-    isLoading = true;
+    isLoading = true; 
     getorderdetails();
     super.initState();
   }

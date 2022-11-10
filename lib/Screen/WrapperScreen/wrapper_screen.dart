@@ -4,10 +4,6 @@ import 'package:pmx/constant.dart';
 
 import 'Pages/ProfileScreen.dart';
 import 'Pages/ScanScreen.dart';
-// import 'package:nec/Screens/Wrapper/Pages/Search/Search_Screen.dart';
-// import 'package:nec/Screens/Wrapper/Pages/Home/Home_Screen.dart';
-// import 'package:nec/components/Sidebar.dart';
-// import 'Pages/Profile/Profile_Screen.dart';a
 
 class WrapperScreen extends StatefulWidget {
   const WrapperScreen({Key? key, required this.title}) : super(key: key);

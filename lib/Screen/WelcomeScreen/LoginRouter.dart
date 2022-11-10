@@ -12,14 +12,17 @@ class LoginRouter extends StatelessWidget {
   const LoginRouter({Key? key, required this.title}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-        future: SharedPref().read('sessiondata'),
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-          if (snapshot.hasData) {
-            return const WrapperScreen(title: appname);
-          } else {
-            return const WelcomeScreen();
-          }
-        });
+    return const WelcomeScreen();
+    // FutureBuilder(
+    //     future: SharedPref().read('sessiondata'),
+    //     builder: (BuildContext context, AsyncSnapshot snapshot) {
+    //       if (snapshot.hasData) {
+    //         SessionData session = snapshot.data;
+    //         // if()
+    //         return const WrapperScreen(title: appname);
+    //       } else {
+    //         return const WelcomeScreen();
+    //       }
+    // });
   }
 }

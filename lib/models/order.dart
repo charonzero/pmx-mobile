@@ -28,7 +28,7 @@ class Orders extends Equatable {
         CName: json['name'],
         CAddress: json['address'],
         CPhone: json['phone'],
-        remark: json['remark'],
+        remark: json['remark'] ?? '',
         township: json['township'],
         city: json['city'],
         total: json['total'],
@@ -44,11 +44,8 @@ Future<List<Orders>> fetchOrders(String userid) async {
   List<Orders> orders = [];
   var data = await SharedPref().read('session_data');
   SessionData session = SessionData.fromJson(data);
-  // bool isAdmin = session.role == 'Admin' || session.role == 'Super Admin';
   bool isAdmin = !(session.role == 'Driver');
-  String url =
-      // serverurl + (isAdmin ? "getAdminOrdersPast" : "getDeliOrdersPast");
-      serverurl + 'getDeliOrders';
+  String url = serverurl + 'getDeliOrders';
   String token = session.token;
 
   var body = {'userid': userid, 'admin': isAdmin.toString()};
@@ -58,6 +55,8 @@ Future<List<Orders>> fetchOrders(String userid) async {
     headers: {"Access-Control_Allow_Origin": "*", "Authorization": token},
     body: body,
   );
+  print(fetchorders.statusCode);
+  print(fetchorders.body);
   if (fetchorders.body.isEmpty || fetchorders.statusCode != 200) return orders;
   final decoded =
       jsonDecode(fetchorders.body)['deliorders'].cast<Map<String, dynamic>>();
@@ -68,14 +67,11 @@ Future<List<Orders>> fetchOrders(String userid) async {
 
 Future<List<Orders>> fetchPastOrders(String userid) async {
   List<Orders> orders = [];
-  //'https://05ae60d3-8144-4268-8ceb-f5b3577bd086.mock.pstmn.io/getParcels'"http://192.168.100.106:2000/getDeliOrdersPast"
   var data = await SharedPref().read('session_data');
   SessionData session = SessionData.fromJson(data);
   bool isAdmin = session.role == 'Admin' || session.role == 'Super Admin';
 
-  String url =
-      // serverurl + (isAdmin ? "getAdminOrdersPast" : "getDeliOrdersPast");
-      serverurl + 'getDeliOrders';
+  String url = serverurl + 'getDeliOrders';
   String token = session.token;
 
   var body = {'userid': userid, 'admin': isAdmin.toString(), 'past': 'true'};
@@ -93,8 +89,6 @@ Future<List<Orders>> fetchPastOrders(String userid) async {
 }
 
 Future<Orders> getOrderDetails(String orderid) async {
-  //https://05ae60d3-8144-4268-8ceb-f5b3577bd086.mock.pstmn.io/getOrderDetails
-  //http://192.168.100.106:2000/getOrderDetails
   var url = serverurl + "getOrderDetails";
   var data = await SharedPref().read('session_data');
   SessionData session = SessionData.fromJson(data);
@@ -106,18 +100,16 @@ Future<Orders> getOrderDetails(String orderid) async {
   );
   final decoded = jsonDecode(fetchorders.body)["orderdetails"];
   Orders orders = Orders.fromJson(decoded);
+
   // if(isSorted) orders.sort((a,b) => b.orderid.compareTo(a.orderid));
   return orders;
 }
 
 Future<Map<String, dynamic>> acceptOrder(
     String ordersecret, String status) async {
-  //'https://05ae60d3-8144-4268-8ceb-f5b3577bd086.mock.pstmn.io/acceptOrder'
-  //"http://192.168.100.106:2000/takeOrder"
   var url = serverurl + "takeOrder";
   SessionData session =
       SessionData.fromJson(await SharedPref().read('session_data'));
-  //Session_data.fromJson(await SharedPref().read('session_data'));
   String token = session.token;
   var fetchorders = await http.post(
     Uri.parse(url),

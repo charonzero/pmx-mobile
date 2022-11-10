@@ -17,8 +17,6 @@ class TextContainer extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 2),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
       width: size.width * 0.8,
-      // decoration: BoxDecoration(
-      //     color: kBackgroundColor, borderRadius: BorderRadius.circular(29)),
       child: child,
     );
   }

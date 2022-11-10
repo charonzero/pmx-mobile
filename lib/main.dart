@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pmx/Screen/WelcomeScreen/LoginRouter.dart';
+import 'package:pmx/Screen/WrapperScreen/Pages/AddScreen.dart';
 import 'package:pmx/constant.dart';
+
+import 'Screen/WelcomeScreen/WelcomeScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,7 +11,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-  static const String _title = 'PMXPress';
+  static const String _title = 'PMXPRESS';
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,11 @@ class MyApp extends StatelessWidget {
           primaryColor: primarycolor,
           scaffoldBackgroundColor: Colors.white,
         ),
-        home: const LoginRouter(title: appname));
+        home: const LoginRouter(
+          title: "PMXPRESS",
+        ));
+    // const LoginRouter(title: appname));
+
+    // home: AddScreen(orderid: "20896507"));
   }
 }
-//

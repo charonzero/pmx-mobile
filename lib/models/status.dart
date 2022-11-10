@@ -48,8 +48,6 @@ class Status {
 Future<Map<String, double>> fetchStatus(bool a) async {
   SessionData session = SharedPref().read('session_data');
   var userid = session.userid;
-  // String s =  a ? 'getPerformanceStatus': 'getTotalStatus';'http://192.168.100.106:2000/'
-  // https://05ae60d3-8144-4268-8ceb-f5b3577bd086.mock.pstmn.io/
   String s = a ? 'getDriverPerformancetdy' : 'getDriverPerformance';
 
   String token = session.token;

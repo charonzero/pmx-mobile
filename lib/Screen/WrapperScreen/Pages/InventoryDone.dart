@@ -23,13 +23,7 @@ class _InventoryDoneState extends State<InventoryDone>
   Future<void> setOrders() async {
     refreshkeydone.currentState?.show(atTop: true);
     var session = await SharedPref().read('session_data');
-    // debugPrint(session['userid'].toString());
     fetchPastOrders(session['userid'].toString()).then((value) {
-      // print(order);print(value);
-      // print(order.equals(value));
-      // print(ListEquality().hash(order));print(ListEquality().hash(value));
-      // print(DeepCollectionEquality.unordered().equals(order, value));
-      // print(order.map((e) => value.contains((element) => false)));
       if (const DeepCollectionEquality.unordered().equals(order, value) ==
           false) {
         if (!mounted) return;
