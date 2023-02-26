@@ -81,12 +81,10 @@ Future<int> login(String username, String password) async {
       (await SharedPreferences.getInstance())
           .setString('session_data', jsonEncode(data.toJson()));
     }
-    print(response.statusCode);
     return response.statusCode;
   } on TimeoutException {
     return -1;
   } catch (err) {
-    print(err);
     return -1;
   }
 }

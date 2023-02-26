@@ -4,23 +4,6 @@
             "outputFile": "D:\\StartupDevRepos\\pmx\\pmx-mobile\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Zet\\.gradle\\caches\\transforms-3\\14b221489d9eb05e0e9620522e8c9e12\\transformed\\appcompat-1.4.1\\res\\values-night-v8\\values-night-v8.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,125,209,293,389,491,593,687",
-                        "endColumns": "69,83,83,95,101,101,93,88",
-                        "endOffsets": "120,204,288,384,486,588,682,771"
-                    },
-                    "to": {
-                        "startLines": "11,12,13,14,15,16,17,42",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "584,654,738,822,918,1020,1122,3870",
-                        "endColumns": "69,83,83,95,101,101,93,88",
-                        "endOffsets": "649,733,817,913,1015,1117,1211,3954"
-                    }
-                },
-                {
                     "source": "D:\\StartupDevRepos\\pmx\\pmx-mobile\\android\\app\\src\\main\\res\\values-night\\colors.xml",
                     "from": {
                         "startLines": "2",
@@ -54,6 +37,23 @@
                         "endLines": "7,10",
                         "endColumns": "12,12",
                         "endOffsets": "410,579"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Zet\\.gradle\\caches\\transforms-3\\314baeb09f65a7cee9a0a98683b112e8\\transformed\\appcompat-1.4.2\\res\\values-night-v8\\values-night-v8.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,125,209,293,389,491,593,687",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "120,204,288,384,486,588,682,771"
+                    },
+                    "to": {
+                        "startLines": "11,12,13,14,15,16,17,42",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "584,654,738,822,918,1020,1122,3870",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "649,733,817,913,1015,1117,1211,3954"
                     }
                 },
                 {

@@ -1,4 +1,4 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, unused_import
 
 import 'dart:async';
 
@@ -26,50 +26,44 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
   Future<void> welcomeRoute() async {
     var data = await SharedPref().read('session_data');
-    print(data);
-    // try {
-    //   SessionData session = SessionData.fromJson(data);
-    //   // JWT.verify(session.jwt, SecretKey('secret'));
+    try {
+      // JWT.verify(session.jwt, SecretKey('secret'));
 
-    //   if (data != null) {
-    //     SessionData session = SessionData.fromJson(data);
-    //     Timer(
-    //         const Duration(seconds: 3),
-    //         () => Navigator.pushReplacement(
-    //             context,
-    //             MaterialPageRoute(
-    //                 builder: (context) =>
-    //                     const WrapperScreen(title: appname))));
-    //   } else {
-    //     Timer(
-    //         const Duration(seconds: 3),
-    //         () => Navigator.pushReplacement(context,
-    //             MaterialPageRoute(builder: (context) => const LoginScreen())));
-    //   }
-    // } on JWTError catch (err) {
-    //   print(err);
-    //   Timer(
-    //       const Duration(seconds: 3),
-    //       () => Navigator.pushReplacement(context,
-    //           MaterialPageRoute(builder: (context) => const LoginScreen())));
-    // } on Error catch (err) {
-    //   print(err);
-    // }
+      if (data != null) {
+        Timer(
+            const Duration(seconds: 3),
+            () => Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        const WrapperScreen(title: appname))));
+      } else {
+        Timer(
+            const Duration(seconds: 3),
+            () => Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) => const LoginScreen())));
+      }
+      // ignore: nullable_type_in_catch_clause
+    } on JWTError {
+      Timer(
+          const Duration(seconds: 3),
+          () => Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => const LoginScreen())));
+    }
     // var data = await SharedPref().read('session_data');
-    // if (data != null) {
-    //   SessionData session = SessionData.fromJson(data);
-    //   Timer(
-    //       const Duration(seconds: 3),
-    //       () => Navigator.pushReplacement(
-    //           context,
-    //           MaterialPageRoute(
-    //               builder: (context) => const WrapperScreen(title: appname))));
-    // } else {
-    //   Timer(
-    //       const Duration(seconds: 3),
-    //       () => Navigator.pushReplacement(context,
-    //           MaterialPageRoute(builder: (context) => const LoginScreen())));
-    // }
+    if (data != null) {
+      Timer(
+          const Duration(seconds: 3),
+          () => Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const WrapperScreen(title: appname))));
+    } else {
+      Timer(
+          const Duration(seconds: 3),
+          () => Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => const LoginScreen())));
+    }
   }
 
   @override
@@ -79,10 +73,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         backgroundColor: secondarycolor,
         body: Center(
             child: SizedBox(
-          height: size.height * 0.3,
-          // child: Image.asset("assets/images/Logo.png",
-          //     width: size.width * 0.75, alignment: Alignment.center)
-          child: const Text("WelcomeScreen"),
-        )));
+                height: size.height * 0.3,
+                child: Image.asset("assets/images/Logo.png",
+                    width: size.width * 0.75, alignment: Alignment.center)
+                // child: const Text("WelcomeScreen"),
+                )));
   }
 }

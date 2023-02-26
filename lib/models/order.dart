@@ -49,14 +49,11 @@ Future<List<Orders>> fetchOrders(String userid) async {
   String token = session.token;
 
   var body = {'userid': userid, 'admin': isAdmin.toString()};
-
   var fetchorders = await http.post(
     Uri.parse(url),
     headers: {"Access-Control_Allow_Origin": "*", "Authorization": token},
     body: body,
   );
-  print(fetchorders.statusCode);
-  print(fetchorders.body);
   if (fetchorders.body.isEmpty || fetchorders.statusCode != 200) return orders;
   final decoded =
       jsonDecode(fetchorders.body)['deliorders'].cast<Map<String, dynamic>>();

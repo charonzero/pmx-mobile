@@ -1,12 +1,12 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.startupdevmm.pmxpress"
-4    android:versionCode="1"
-5    android:versionName="1.0.0" >
+4    android:versionCode="8"
+5    android:versionName="1.0.8" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-9        android:targetSdkVersion="31" />
+9        android:targetSdkVersion="33" />
 10    <!--
 11         The INTERNET permission is required for development. Specifically,
 12         the Flutter tool needs it to communicate with the running application
@@ -19,8 +19,8 @@
 16-->[:mobile_scanner] D:\StartupDevRepos\pmx\pmx-mobile\build\mobile_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-65
 16-->[:mobile_scanner] D:\StartupDevRepos\pmx\pmx-mobile\build\mobile_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-62
 17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
-17-->[com.google.android.exoplayer:exoplayer-core:2.17.1] C:\Users\Zet\.gradle\caches\transforms-3\9c3e1c556f4536cd794cd7354f8dc080\transformed\jetified-exoplayer-core-2.17.1\AndroidManifest.xml:24:5-79
-17-->[com.google.android.exoplayer:exoplayer-core:2.17.1] C:\Users\Zet\.gradle\caches\transforms-3\9c3e1c556f4536cd794cd7354f8dc080\transformed\jetified-exoplayer-core-2.17.1\AndroidManifest.xml:24:22-76
+17-->[com.google.android.exoplayer:exoplayer-core:2.18.1] C:\Users\Zet\.gradle\caches\transforms-3\6ec2c823b2ddfa9d4aff16fd99b56b89\transformed\jetified-exoplayer-core-2.18.1\AndroidManifest.xml:24:5-79
+17-->[com.google.android.exoplayer:exoplayer-core:2.18.1] C:\Users\Zet\.gradle\caches\transforms-3\6ec2c823b2ddfa9d4aff16fd99b56b89\transformed\jetified-exoplayer-core-2.18.1\AndroidManifest.xml:24:22-76
 18    <uses-feature
 18-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:25:5-27:36
 19        android:name="android.hardware.camera"
@@ -62,7 +62,7 @@
 38    <application
 39        android:name="android.app.Application"
 40        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-40-->[androidx.core:core:1.7.0] C:\Users\Zet\.gradle\caches\transforms-3\5e083c06c9925c2309f02468fc66e376\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+40-->[androidx.core:core:1.8.0] C:\Users\Zet\.gradle\caches\transforms-3\d363e3b5616f580c766e3e2b3c05f27d\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
 41        android:debuggable="true"
 42        android:icon="@mipmap/ic_launcher"
 43        android:label="PMXPress" >
@@ -124,19 +124,19 @@
 85-->[androidx.window:window:1.0.0-beta04] C:\Users\Zet\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
 86
 87        <service
-87-->[androidx.camera:camera-camera2:1.2.0-alpha01] C:\Users\Zet\.gradle\caches\transforms-3\66da1f9c5e62fdc10526a4cd1618c777\transformed\jetified-camera-camera2-1.2.0-alpha01\AndroidManifest.xml:26:9-35:19
+87-->[androidx.camera:camera-camera2:1.1.0] C:\Users\Zet\.gradle\caches\transforms-3\23364144ca75424e407a947c75004576\transformed\jetified-camera-camera2-1.1.0\AndroidManifest.xml:26:9-35:19
 88            android:name="androidx.camera.core.impl.MetadataHolderService"
-88-->[androidx.camera:camera-camera2:1.2.0-alpha01] C:\Users\Zet\.gradle\caches\transforms-3\66da1f9c5e62fdc10526a4cd1618c777\transformed\jetified-camera-camera2-1.2.0-alpha01\AndroidManifest.xml:27:13-75
+88-->[androidx.camera:camera-camera2:1.1.0] C:\Users\Zet\.gradle\caches\transforms-3\23364144ca75424e407a947c75004576\transformed\jetified-camera-camera2-1.1.0\AndroidManifest.xml:27:13-75
 89            android:enabled="false"
-89-->[androidx.camera:camera-camera2:1.2.0-alpha01] C:\Users\Zet\.gradle\caches\transforms-3\66da1f9c5e62fdc10526a4cd1618c777\transformed\jetified-camera-camera2-1.2.0-alpha01\AndroidManifest.xml:28:13-36
+89-->[androidx.camera:camera-camera2:1.1.0] C:\Users\Zet\.gradle\caches\transforms-3\23364144ca75424e407a947c75004576\transformed\jetified-camera-camera2-1.1.0\AndroidManifest.xml:28:13-36
 90            android:exported="false" >
-90-->[androidx.camera:camera-camera2:1.2.0-alpha01] C:\Users\Zet\.gradle\caches\transforms-3\66da1f9c5e62fdc10526a4cd1618c777\transformed\jetified-camera-camera2-1.2.0-alpha01\AndroidManifest.xml:29:13-37
+90-->[androidx.camera:camera-camera2:1.1.0] C:\Users\Zet\.gradle\caches\transforms-3\23364144ca75424e407a947c75004576\transformed\jetified-camera-camera2-1.1.0\AndroidManifest.xml:29:13-37
 91            <meta-data
-91-->[androidx.camera:camera-camera2:1.2.0-alpha01] C:\Users\Zet\.gradle\caches\transforms-3\66da1f9c5e62fdc10526a4cd1618c777\transformed\jetified-camera-camera2-1.2.0-alpha01\AndroidManifest.xml:32:13-34:89
+91-->[androidx.camera:camera-camera2:1.1.0] C:\Users\Zet\.gradle\caches\transforms-3\23364144ca75424e407a947c75004576\transformed\jetified-camera-camera2-1.1.0\AndroidManifest.xml:32:13-34:89
 92                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
-92-->[androidx.camera:camera-camera2:1.2.0-alpha01] C:\Users\Zet\.gradle\caches\transforms-3\66da1f9c5e62fdc10526a4cd1618c777\transformed\jetified-camera-camera2-1.2.0-alpha01\AndroidManifest.xml:33:17-103
+92-->[androidx.camera:camera-camera2:1.1.0] C:\Users\Zet\.gradle\caches\transforms-3\23364144ca75424e407a947c75004576\transformed\jetified-camera-camera2-1.1.0\AndroidManifest.xml:33:17-103
 93                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
-93-->[androidx.camera:camera-camera2:1.2.0-alpha01] C:\Users\Zet\.gradle\caches\transforms-3\66da1f9c5e62fdc10526a4cd1618c777\transformed\jetified-camera-camera2-1.2.0-alpha01\AndroidManifest.xml:34:17-86
+93-->[androidx.camera:camera-camera2:1.1.0] C:\Users\Zet\.gradle\caches\transforms-3\23364144ca75424e407a947c75004576\transformed\jetified-camera-camera2-1.1.0\AndroidManifest.xml:34:17-86
 94        </service>
 95        <service
 95-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.0.0] C:\Users\Zet\.gradle\caches\transforms-3\5c6e7baf6fb2b3692d55a2dd3d53beb7\transformed\jetified-play-services-mlkit-barcode-scanning-18.0.0\AndroidManifest.xml:9:9-15:19
