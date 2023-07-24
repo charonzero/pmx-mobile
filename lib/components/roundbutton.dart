@@ -12,10 +12,10 @@ class RoundButton extends StatelessWidget {
     Key? key,
     required this.text,
     required this.onpress,
-    this.color = primarycolor,
+    this.color = primaryColor,
     this.textcolor = Colors.white,
-    this.ccolor = primarycolor,
-    this.bcolor = primarycolor,
+    this.ccolor = primaryColor,
+    this.bcolor = primaryColor,
   }) : super(key: key);
 
   @override

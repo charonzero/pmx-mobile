@@ -1,11 +1,10 @@
-// ignore_for_file: file_names
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:pmx/Screen/WrapperScreen/Pages/Inventory.dart';
-import 'package:pmx/Screen/WrapperScreen/Pages/InventoryDone.dart';
-import 'package:pmx/Screen/WrapperScreen/Pages/TransitInventory.dart';
-
 import 'package:pmx/models/login.dart';
+import 'package:pmx/models/modals.dart';
+import 'package:pmx/Screen/WrapperScreen/Pages/Inventory.dart';
+import 'package:pmx/models/package.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -15,63 +14,54 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  String userId = "";
+  String role = "";
+  List<PackageData> currentPackages = [];
+  List<PackageData> pastPackages = [];
+
   @override
   void initState() {
-    getuserdata();
     super.initState();
+    getUserData();
+    fetchPackages();
   }
 
-  String userid = "";
-  String role = "";
-  Future<void> getuserdata() async {
+  Future<void> fetchPackages() async {
+    try {
+      if (mounted) {
+        List<PackageData>? currentPackageList =
+            await fetchInventory('/getCurrentPackages', context);
+        setState(() {
+          currentPackages = currentPackageList;
+        });
+      }
+      // if (mounted) {
+      //   List<PackageData>? pastPackageList =
+      //       await fetchInventory('/getPastPackages', context);
+      //   setState(() {
+      //     pastPackages = pastPackageList ?? [];
+      //   });
+      // }
+    } catch (e) {
+      print('Error fetching packages: $e');
+    }
+  }
+
+  Future<void> getUserData() async {
     var session = await SharedPref().read('session_data');
     setState(() {
-      userid = session['userid'].toString();
+      userId = session['userid'].toString();
       role = session['role'].toString();
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    if (role == 'Driver') {
-      return DefaultTabController(
-          length: 2,
-          child: Scaffold(
-            appBar: AppBar(
-              automaticallyImplyLeading: false,
-              title: const TabBar(
-                tabs: [
-                  Tab(
-                      icon: Icon(
-                    Icons.fire_truck_outlined,
-                  )),
-                  Tab(
-                      icon: Icon(
-                    Icons.fire_truck,
-                  )),
-                ],
-              ),
-            ),
-            body: const TabBarView(
-              physics: NeverScrollableScrollPhysics(),
-              children: [
-                Inventory(),
-                InventoryDone(),
-              ],
-            ),
-          ));
-    } else {
-      return Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          title: const Center(
-              child: Icon(
-            Icons.warehouse,
-            color: Colors.white,
-          )),
-        ),
-        body: const TrasnsitInventory(),
-      );
-    }
+    final isDriver = role == 'Driver';
+    return Inventory(
+      packages: currentPackages,
+      title: 'Inventory',
+      refreshPackages: fetchPackages,
+    );
   }
 }

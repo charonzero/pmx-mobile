@@ -13,8 +13,8 @@ if (flutterRoot == null) {
 
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
 def flutterVersionName = localProperties.getProperty('flutter.versionName')
-flutterVersionCode =  '8'
-flutterVersionName = '1.0.8'
+flutterVersionCode =  '9'
+flutterVersionName = '1.0.9'
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
@@ -27,7 +27,7 @@ if (keystorePropertiesFile.exists()) {
 
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 33
     ndkVersion flutter.ndkVersion
 
     compileOptions {

@@ -21,7 +21,7 @@ class ProfileButton extends StatelessWidget {
       height: size.height * 0.07,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          foregroundColor: primarycolor,
+          foregroundColor: primaryColor,
           backgroundColor: Colors.white,
           shape: const RoundedRectangleBorder(
             side: BorderSide(
@@ -43,7 +43,7 @@ class ProfileButton extends StatelessWidget {
             ),
             const Spacer(),
             Icon(Icons.chevron_right_outlined,
-                size: size.height * 0.03, color: primarycolor)
+                size: size.height * 0.03, color: primaryColor)
           ],
         ),
       ),

@@ -75,7 +75,7 @@ class _WrapperScreenState extends State<WrapperScreen> {
                       ),
                     ],
                     currentIndex: _selectedIndex,
-                    selectedItemColor: primarycolor,
+                    selectedItemColor: primaryColor,
                     onTap: _onItemTapped,
                   ),
                 ))));

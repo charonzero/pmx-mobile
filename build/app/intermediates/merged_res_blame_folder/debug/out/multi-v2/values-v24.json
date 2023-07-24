@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\StartupDevRepos\\pmx\\pmx-mobile\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
+            "outputFile": "com.startupdevmm.pmxpress.app-mergeDebugResources-38:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Zet\\.gradle\\caches\\transforms-3\\314baeb09f65a7cee9a0a98683b112e8\\transformed\\appcompat-1.4.2\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\Zet\\.gradle\\caches\\transforms-3\\4b3e07ce06ead8cdf98ff45b8f70bf37\\transformed\\appcompat-1.4.2\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Zet\\.gradle\\caches\\transforms-3\\31201b32770f183f2e9afb71858ba75b\\transformed\\material-1.6.1\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\Zet\\.gradle\\caches\\transforms-3\\50c9a6ffeaba83e2b4164a86f31ab9d5\\transformed\\material-1.6.1\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",

@@ -5,7 +5,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:pmx/Screen/LoginScreen/LoginScreen.dart';
 import 'package:pmx/Screen/WrapperScreen/wrapper_screen.dart';
-import 'package:pmx/components/roundbutton.dart';
+import 'package:pmx/components/RoundButton.dart';
 import 'package:pmx/constant.dart';
 import 'package:pmx/models/login.dart';
 import 'package:dart_jsonwebtoken/dart_jsonwebtoken.dart';
@@ -28,41 +28,27 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     var data = await SharedPref().read('session_data');
     try {
       // JWT.verify(session.jwt, SecretKey('secret'));
-
-      if (data != null) {
+      if (data.isNotEmpty) {
         Timer(
-            const Duration(seconds: 3),
-            () => Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        const WrapperScreen(title: appname))));
-      } else {
-        Timer(
-            const Duration(seconds: 3),
-            () => Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) => const LoginScreen())));
-      }
-      // ignore: nullable_type_in_catch_clause
-    } on JWTError {
-      Timer(
-          const Duration(seconds: 3),
-          () => Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => const LoginScreen())));
-    }
-    // var data = await SharedPref().read('session_data');
-    if (data != null) {
-      Timer(
           const Duration(seconds: 3),
           () => Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                  builder: (context) => const WrapperScreen(title: appname))));
-    } else {
-      Timer(
+                  builder: (context) => const WrapperScreen(title: appName))),
+        );
+      } else {
+        Timer(
           const Duration(seconds: 3),
           () => Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => const LoginScreen())));
+              MaterialPageRoute(builder: (context) => const LoginScreen())),
+        );
+      }
+    } on JWTError {
+      Timer(
+        const Duration(seconds: 3),
+        () => Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const LoginScreen())),
+      );
     }
   }
 
@@ -70,7 +56,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-        backgroundColor: secondarycolor,
+        backgroundColor: secondaryColor,
         body: Center(
             child: SizedBox(
                 height: size.height * 0.3,

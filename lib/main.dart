@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:pmx/Screen/WelcomeScreen/LoginRouter.dart';
 import 'package:pmx/constant.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
+
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -14,20 +15,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        navigatorKey: navigatorKey,
         debugShowCheckedModeBanner: false,
         title: _title,
         theme: ThemeData(
           appBarTheme: const AppBarTheme(
-            color: primarycolor,
+            color: primaryColor,
           ),
-          primaryColor: primarycolor,
+          primaryColor: primaryColor,
           scaffoldBackgroundColor: Colors.white,
         ),
         home: const LoginRouter(
           title: "PMXPRESS",
         ));
-    // const LoginRouter(title: appname));
-
-    // home: AddScreen(orderid: "20896507"));
   }
 }

@@ -1,149 +1,208 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 import 'package:pmx/Screen/LoginScreen/LoginScreen.dart';
 import 'package:pmx/Screen/WrapperScreen/Pages/ChangePassword.dart';
 import 'package:pmx/Screen/WrapperScreen/Pages/widgets/ProfileButton.dart';
 import 'package:pmx/constant.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+import 'package:pmx/main.dart';
 import 'package:pmx/models/login.dart';
-import 'package:pmx/models/server.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return FutureBuilder(
-        future: SharedPref().read('session_data'),
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-          if (snapshot.hasData) {
+      future: SharedPref().read('session_data'),
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(
+            child: CircularProgressIndicator.adaptive(),
+          );
+        } else if (snapshot.data.isEmpty) {
+          // Redirect to login screen if session data is not available
+          Future.delayed(Duration.zero, () {
+            navigatorKey.currentState!.push(
+              MaterialPageRoute(builder: (context) => const LoginScreen()),
+            );
+          });
+          return const SizedBox.shrink();
+        } else {
+          try {
             SessionData session = SessionData.fromJson(snapshot.data);
             DefaultCacheManager().emptyCache();
-            return SafeArea(
-              child: Scaffold(
-                body: Column(children: [
-                  Row(children: [
-                    Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 20, horizontal: 20),
-                        child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(40)),
-                              border: Border.all(
-                                width: 1,
-                                color: primarycolor,
-                                style: BorderStyle.solid,
+            return Scaffold(
+              backgroundColor: Colors.white,
+              body: Stack(
+                children: [
+                  Positioned.fill(
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            Color(0xFF031B50),
+                            Color(0xFF031B50),
+                          ],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                        ),
+                      ),
+                      child: Align(
+                        alignment: Alignment.topCenter,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 50),
+                          child: Image.asset(
+                            "assets/images/minilogo.png",
+                            width: size.width * 0.3,
+                            alignment: Alignment.center,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: size.height * 0.25,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(40),
+                          topRight: Radius.circular(40),
+                        ),
+                      ),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            const SizedBox(height: 30),
+                            RichText(
+                              text: TextSpan(
+                                text: session.name!,
+                                style: const TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 24,
+                                ),
+                                children: [
+                                  TextSpan(
+                                    text: " @${session.username!}",
+                                    style: const TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                            child: CircleAvatar(
-                              backgroundColor: Colors.white,
-                              radius: 40,
-                              child: CachedNetworkImage(
-                                color: Colors.white,
-                                httpHeaders: {'Authorization': session.token},
-                                imageUrl: serverurl +
-                                    "staffimg/" +
-                                    session.userid.toString(),
-                                imageBuilder: (context, imageProvider) =>
-                                    Container(
-                                  width: 80.0,
-                                  height: 80.0,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.white,
-                                    image: DecorationImage(
-                                        image: imageProvider,
-                                        fit: BoxFit.cover),
-                                  ),
-                                ),
-                                placeholder: (context, url) =>
-                                    const CircularProgressIndicator(
-                                  strokeWidth: 1,
-                                  color: primarycolor,
-                                ),
-                                errorWidget: (context, url, error) =>
-                                    const Icon(
-                                  Icons.error,
-                                  color: primarycolor,
-                                ),
+                            const SizedBox(height: 5),
+                            Text(
+                              session.role!.roleName!,
+                              style: const TextStyle(
+                                color: Colors.grey,
+                                fontSize: 16,
                               ),
-                            ))),
-                    SizedBox(
-                      width: size.width * 0.07,
+                            ),
+                            const SizedBox(height: 30),
+                            Container(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 20),
+                              // child: const Column(
+                              //   crossAxisAlignment: CrossAxisAlignment.start,
+                              //   children: [
+                              //     SizedBox(height: 30),
+                              //     Text(
+                              //       'Account Settings',
+                              //       style: TextStyle(
+                              //         fontSize: 22,
+                              //         fontWeight: FontWeight.bold,
+                              //       ),
+                              //     ),
+                              //     SizedBox(height: 20),
+                              //     // ProfileButton(
+                              //     //   size: size,
+                              //     //   name: 'Change Password',
+                              //     //   route: const ChangePassword(),
+                              //     // ),
+                              //     // const SizedBox(height: 10),
+                              //     // ProfileButton(
+                              //     //   size: size,
+                              //     //   name: 'Privacy Settings',
+                              //     //   route: const ChangePassword(),
+                              //     // ),
+                              //   ],
+                              // ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
-                    Expanded(
-                        child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                          Align(
-                              alignment: Alignment.topLeft,
-                              child: Text(session.username,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: size.width * 0.05))),
-                          Align(
-                              alignment: Alignment.topLeft,
-                              child: Text(session.role,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: size.width * 0.03))),
-                        ]))
-                  ]),
-                  ProfileButton(
-                    size: size,
-                    name: 'My Account',
-                    route: const ChangePassword(),
                   ),
-                  ProfileButton(
-                    size: size,
-                    name: 'Change Account Information',
-                    route: const ChangePassword(),
+                  Positioned(
+                    bottom: 80,
+                    left: 0,
+                    right: 0,
+                    child: FloatingActionButton(
+                      backgroundColor: primaryColor,
+                      onPressed: () async {
+                        var bool = await logout();
+                        if (bool && context.mounted) {
+                          Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const LoginScreen(),
+                            ),
+                            (route) => false,
+                          );
+                        }
+                      },
+                      child: const Icon(
+                        Icons.logout,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
-                  ProfileButton(
-                    size: size,
-                    name: 'Change Password',
-                    route: const ChangePassword(),
-                  ),
-                ]),
-                floatingActionButton: FloatingActionButton(
-                  backgroundColor: primarycolor,
-                  onPressed: () async {
-                    var bool = await logout();
-                    if (bool) {
-                      Navigator.pushAndRemoveUntil(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const LoginScreen()),
-                          (route) => false);
-                    }
-                  },
-                  child: const Icon(
-                    Icons.logout,
-                    color: Colors.white,
-                  ),
-                ),
-                floatingActionButtonLocation:
-                    FloatingActionButtonLocation.centerFloat,
+                ],
               ),
             );
-          } else if (snapshot.hasError) {
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Icon(Icons.error),
-                SizedBox(
-                  height: 5,
+          } catch (error) {
+            print("Error: $error");
+            return Scaffold(
+              body: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      'An error occurred',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    const SizedBox(height: 20),
+                    ElevatedButton(
+                      onPressed: () async {
+                        var bool = await logout();
+                        print(bool);
+                        if (bool && context.mounted) {
+                          Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const LoginScreen(),
+                            ),
+                            (route) => false,
+                          );
+                        }
+                      },
+                      child: const Text('Logout'),
+                    ),
+                  ],
                 ),
-                Text('Connection Error.'),
-              ],
+              ),
             );
-          } else {
-            return const Center(child: CircularProgressIndicator.adaptive());
           }
-        });
+        }
+      },
+    );
   }
 }

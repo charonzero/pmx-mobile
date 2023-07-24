@@ -1,4 +1,4 @@
-com.tekartik.sqflite
+com.tekartik.sqfite
 attr activityAction
 attr activityName
 attr alpha

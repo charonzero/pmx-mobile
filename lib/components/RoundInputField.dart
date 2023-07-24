@@ -47,7 +47,7 @@ class RoundedInputField extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 5),
             child: Icon(
               icon,
-              color: primarycolor,
+              color: primaryColor,
             ),
           ),
           hintText: hintText,

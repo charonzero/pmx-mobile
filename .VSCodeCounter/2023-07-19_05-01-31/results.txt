@@ -1,0 +1,179 @@
+Date : 2023-07-19 05:01:31
+Directory : d:\StartupDevRepos\pmx\pmx-mobile
+Total : 81 files,  4328 codes, 724 comments, 497 blanks, all 5549 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| Dart       |         24 |      2,628 |        476 |        227 |      3,331 |
+| XML        |         22 |        624 |         30 |         18 |        672 |
+| C++        |         16 |        499 |        107 |        170 |        776 |
+| JSON       |          5 |        249 |          0 |          4 |        253 |
+| Groovy     |          3 |        112 |         13 |         24 |        149 |
+| Markdown   |          3 |        101 |          0 |         18 |        119 |
+| YAML       |          2 |         38 |         82 |         19 |        139 |
+| HTML       |          1 |         37 |         16 |          6 |         59 |
+| Swift      |          3 |         32 |          0 |          8 |         40 |
+| Properties |          2 |          8 |          0 |          3 |         11 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                               | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                  |         81 |      4,328 |        724 |        497 |      5,549 |
+| . (Files)                                                                                                          |          3 |         48 |         82 |         26 |        156 |
+| android                                                                                                            |         16 |        200 |         41 |         35 |        276 |
+| android (Files)                                                                                                    |          3 |         49 |          8 |         13 |         70 |
+| android\app                                                                                                        |         12 |        146 |         33 |         20 |        199 |
+| android\app (Files)                                                                                                |          1 |         66 |          5 |         12 |         83 |
+| android\app\src                                                                                                    |         11 |         80 |         28 |          8 |        116 |
+| android\app\src\debug                                                                                              |          1 |          4 |          4 |          1 |          9 |
+| android\app\src\main                                                                                               |          9 |         72 |         20 |          6 |         98 |
+| android\app\src\main (Files)                                                                                       |          1 |         28 |          2 |          1 |         31 |
+| android\app\src\main\res                                                                                           |          8 |         44 |         18 |          5 |         67 |
+| android\app\src\main\res\drawable                                                                                  |          1 |          4 |          0 |          2 |          6 |
+| android\app\src\main\res\drawable-v21                                                                              |          1 |          4 |          0 |          1 |          5 |
+| android\app\src\main\res\mipmap-anydpi-v26                                                                         |          2 |         10 |          0 |          0 |         10 |
+| android\app\src\main\res\values                                                                                    |          2 |         13 |          9 |          1 |         23 |
+| android\app\src\main\res\values-night                                                                              |          2 |         13 |          9 |          1 |         23 |
+| android\app\src\profile                                                                                            |          1 |          4 |          4 |          1 |          9 |
+| android\gradle                                                                                                     |          1 |          5 |          0 |          2 |          7 |
+| android\gradle\wrapper                                                                                             |          1 |          5 |          0 |          2 |          7 |
+| assets                                                                                                             |          2 |          4 |          0 |          0 |          4 |
+| assets (Files)                                                                                                     |          1 |          1 |          0 |          0 |          1 |
+| assets\images                                                                                                      |          1 |          3 |          0 |          0 |          3 |
+| ios                                                                                                                |         11 |        311 |          2 |         13 |        326 |
+| ios\Flutter                                                                                                        |          1 |         26 |          0 |          1 |         27 |
+| ios\Runner                                                                                                         |          8 |        269 |          2 |         10 |        281 |
+| ios\Runner (Files)                                                                                                 |          3 |         60 |          0 |          4 |         64 |
+| ios\Runner.xcodeproj                                                                                               |          1 |          8 |          0 |          1 |          9 |
+| ios\Runner.xcodeproj\project.xcworkspace                                                                           |          1 |          8 |          0 |          1 |          9 |
+| ios\Runner.xcodeproj\project.xcworkspace\xcshareddata                                                              |          1 |          8 |          0 |          1 |          9 |
+| ios\Runner.xcworkspace                                                                                             |          1 |          8 |          0 |          1 |          9 |
+| ios\Runner.xcworkspace\xcshareddata                                                                                |          1 |          8 |          0 |          1 |          9 |
+| ios\Runner\Assets.xcassets                                                                                         |          3 |        148 |          0 |          4 |        152 |
+| ios\Runner\Assets.xcassets\AppIcon.appiconset                                                                      |          1 |        122 |          0 |          1 |        123 |
+| ios\Runner\Assets.xcassets\LaunchImage.imageset                                                                    |          2 |         26 |          0 |          3 |         29 |
+| ios\Runner\Base.lproj                                                                                              |          2 |         61 |          2 |          2 |         65 |
+| lib                                                                                                                |         25 |      2,716 |        476 |        236 |      3,428 |
+| lib (Files)                                                                                                        |          2 |         38 |          1 |          8 |         47 |
+| lib\Screen                                                                                                         |         13 |      1,438 |        421 |        107 |      1,966 |
+| lib\Screen\LoginScreen                                                                                             |          1 |        142 |          7 |          9 |        158 |
+| lib\Screen\WelcomeScreen                                                                                           |          2 |         71 |          4 |         12 |         87 |
+| lib\Screen\WrapperScreen                                                                                           |         10 |      1,225 |        410 |         86 |      1,721 |
+| lib\Screen\WrapperScreen (Files)                                                                                   |          1 |         77 |          0 |          7 |         84 |
+| lib\Screen\WrapperScreen\Pages                                                                                     |          9 |      1,148 |        410 |         79 |      1,637 |
+| lib\Screen\WrapperScreen\Pages (Files)                                                                             |          7 |      1,085 |         39 |         57 |      1,181 |
+| lib\Screen\WrapperScreen\Pages\components                                                                          |          1 |          0 |        370 |         15 |        385 |
+| lib\Screen\WrapperScreen\Pages\widgets                                                                             |          1 |         63 |          1 |          7 |         71 |
+| lib\components                                                                                                     |          5 |        216 |         11 |         23 |        250 |
+| lib\models                                                                                                         |          5 |      1,024 |         43 |         98 |      1,165 |
+| linux                                                                                                              |          5 |         94 |         27 |         38 |        159 |
+| linux (Files)                                                                                                      |          3 |         86 |         18 |         27 |        131 |
+| linux\flutter                                                                                                      |          2 |          8 |          9 |         11 |         28 |
+| macos                                                                                                              |          7 |        479 |          0 |         11 |        490 |
+| macos\Runner                                                                                                       |          5 |        463 |          0 |          9 |        472 |
+| macos\Runner (Files)                                                                                               |          3 |         52 |          0 |          7 |         59 |
+| macos\Runner.xcodeproj                                                                                             |          1 |          8 |          0 |          1 |          9 |
+| macos\Runner.xcodeproj\project.xcworkspace                                                                         |          1 |          8 |          0 |          1 |          9 |
+| macos\Runner.xcodeproj\project.xcworkspace\xcshareddata                                                            |          1 |          8 |          0 |          1 |          9 |
+| macos\Runner.xcworkspace                                                                                           |          1 |          8 |          0 |          1 |          9 |
+| macos\Runner.xcworkspace\xcshareddata                                                                              |          1 |          8 |          0 |          1 |          9 |
+| macos\Runner\Assets.xcassets                                                                                       |          1 |         68 |          0 |          1 |         69 |
+| macos\Runner\Assets.xcassets\AppIcon.appiconset                                                                    |          1 |         68 |          0 |          1 |         69 |
+| macos\Runner\Base.lproj                                                                                            |          1 |        343 |          0 |          1 |        344 |
+| web                                                                                                                |          2 |         72 |         16 |          7 |         95 |
+| windows                                                                                                            |         10 |        404 |         80 |        131 |        615 |
+| windows\flutter                                                                                                    |          2 |          8 |          9 |         11 |         28 |
+| windows\runner                                                                                                     |          8 |        396 |         71 |        120 |        587 |
++--------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                           | language   | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| d:\StartupDevRepos\pmx\pmx-mobile\README.md                                                                        | Markdown   |         10 |          0 |          7 |         17 |
+| d:\StartupDevRepos\pmx\pmx-mobile\analysis_options.yaml                                                            | YAML       |          3 |         23 |          4 |         30 |
+| d:\StartupDevRepos\pmx\pmx-mobile\android\app\build.gradle                                                         | Groovy     |         66 |          5 |         12 |         83 |
+| d:\StartupDevRepos\pmx\pmx-mobile\android\app\src\debug\AndroidManifest.xml                                        | XML        |          4 |          4 |          1 |          9 |
+| d:\StartupDevRepos\pmx\pmx-mobile\android\app\src\main\AndroidManifest.xml                                         | XML        |         28 |          2 |          1 |         31 |
+| d:\StartupDevRepos\pmx\pmx-mobile\android\app\src\main\res\drawable-v21\launch_background.xml                      | XML        |          4 |          0 |          1 |          5 |
+| d:\StartupDevRepos\pmx\pmx-mobile\android\app\src\main\res\drawable\launch_background.xml                          | XML        |          4 |          0 |          2 |          6 |
+| d:\StartupDevRepos\pmx\pmx-mobile\android\app\src\main\res\mipmap-anydpi-v26\ic_launcher.xml                       | XML        |          5 |          0 |          0 |          5 |
+| d:\StartupDevRepos\pmx\pmx-mobile\android\app\src\main\res\mipmap-anydpi-v26\ic_launcher_round.xml                 | XML        |          5 |          0 |          0 |          5 |
+| d:\StartupDevRepos\pmx\pmx-mobile\android\app\src\main\res\values-night\colors.xml                                 | XML        |          4 |          0 |          0 |          4 |
+| d:\StartupDevRepos\pmx\pmx-mobile\android\app\src\main\res\values-night\styles.xml                                 | XML        |          9 |          9 |          1 |         19 |
+| d:\StartupDevRepos\pmx\pmx-mobile\android\app\src\main\res\values\colors.xml                                       | XML        |          4 |          0 |          0 |          4 |
+| d:\StartupDevRepos\pmx\pmx-mobile\android\app\src\main\res\values\styles.xml                                       | XML        |          9 |          9 |          1 |         19 |
+| d:\StartupDevRepos\pmx\pmx-mobile\android\app\src\profile\AndroidManifest.xml                                      | XML        |          4 |          4 |          1 |          9 |
+| d:\StartupDevRepos\pmx\pmx-mobile\android\build.gradle                                                             | Groovy     |         34 |          0 |          5 |         39 |
+| d:\StartupDevRepos\pmx\pmx-mobile\android\gradle.properties                                                        | Properties |          3 |          0 |          1 |          4 |
+| d:\StartupDevRepos\pmx\pmx-mobile\android\gradle\wrapper\gradle-wrapper.properties                                 | Properties |          5 |          0 |          2 |          7 |
+| d:\StartupDevRepos\pmx\pmx-mobile\android\settings.gradle                                                          | Groovy     |         12 |          8 |          7 |         27 |
+| d:\StartupDevRepos\pmx\pmx-mobile\assets\images\box.svg                                                            | XML        |          3 |          0 |          0 |          3 |
+| d:\StartupDevRepos\pmx\pmx-mobile\assets\urlconfig.json                                                            | JSON       |          1 |          0 |          0 |          1 |
+| d:\StartupDevRepos\pmx\pmx-mobile\ios\Flutter\AppFrameworkInfo.plist                                               | XML        |         26 |          0 |          1 |         27 |
+| d:\StartupDevRepos\pmx\pmx-mobile\ios\Runner.xcodeproj\project.xcworkspace\xcshareddata\IDEWorkspaceChecks.plist   | XML        |          8 |          0 |          1 |          9 |
+| d:\StartupDevRepos\pmx\pmx-mobile\ios\Runner.xcworkspace\xcshareddata\IDEWorkspaceChecks.plist                     | XML        |          8 |          0 |          1 |          9 |
+| d:\StartupDevRepos\pmx\pmx-mobile\ios\Runner\AppDelegate.swift                                                     | Swift      |         12 |          0 |          2 |         14 |
+| d:\StartupDevRepos\pmx\pmx-mobile\ios\Runner\Assets.xcassets\AppIcon.appiconset\Contents.json                      | JSON       |        122 |          0 |          1 |        123 |
+| d:\StartupDevRepos\pmx\pmx-mobile\ios\Runner\Assets.xcassets\LaunchImage.imageset\Contents.json                    | JSON       |         23 |          0 |          1 |         24 |
+| d:\StartupDevRepos\pmx\pmx-mobile\ios\Runner\Assets.xcassets\LaunchImage.imageset\README.md                        | Markdown   |          3 |          0 |          2 |          5 |
+| d:\StartupDevRepos\pmx\pmx-mobile\ios\Runner\Base.lproj\LaunchScreen.storyboard                                    | XML        |         36 |          1 |          1 |         38 |
+| d:\StartupDevRepos\pmx\pmx-mobile\ios\Runner\Base.lproj\Main.storyboard                                            | XML        |         25 |          1 |          1 |         27 |
+| d:\StartupDevRepos\pmx\pmx-mobile\ios\Runner\Info.plist                                                            | XML        |         47 |          0 |          1 |         48 |
+| d:\StartupDevRepos\pmx\pmx-mobile\ios\Runner\Runner-Bridging-Header.h                                              | C++        |          1 |          0 |          1 |          2 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\Screen\LoginScreen\LoginScreen.dart                                          | Dart       |        142 |          7 |          9 |        158 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\Screen\WelcomeScreen\LoginRouter.dart                                        | Dart       |         13 |          1 |          4 |         18 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\Screen\WelcomeScreen\WelcomeScreen.dart                                      | Dart       |         58 |          3 |          8 |         69 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\Screen\WrapperScreen\Pages\AddScreenPage.dart                                | Dart       |        234 |          1 |         10 |        245 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\Screen\WrapperScreen\Pages\ChangePassword.dart                               | Dart       |         30 |          1 |          3 |         34 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\Screen\WrapperScreen\Pages\HomeScreen.dart                                   | Dart       |         52 |          7 |          9 |         68 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\Screen\WrapperScreen\Pages\Inventory.dart                                    | Dart       |        369 |          2 |         10 |        381 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\Screen\WrapperScreen\Pages\ProfileScreen.dart                                | Dart       |        180 |         26 |          3 |        209 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\Screen\WrapperScreen\Pages\ScanScreen.dart                                   | Dart       |        132 |          2 |         13 |        147 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\Screen\WrapperScreen\Pages\components\PackageOverlay.dart                    | Dart       |          0 |        370 |         15 |        385 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\Screen\WrapperScreen\Pages\hm.md                                             | Markdown   |         88 |          0 |          9 |         97 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\Screen\WrapperScreen\Pages\widgets\ProfileButton.dart                        | Dart       |         63 |          1 |          7 |         71 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\Screen\WrapperScreen\wrapper_screen.dart                                     | Dart       |         77 |          0 |          7 |         84 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\components\RoundButton.dart                                                  | Dart       |         39 |          1 |          5 |         45 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\components\RoundInputField.dart                                              | Dart       |         63 |          1 |          5 |         69 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\components\RoundPasswordField.dart                                           | Dart       |         73 |          1 |          6 |         80 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\components\TextContainer.dart                                                | Dart       |         19 |          1 |          4 |         24 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\components\background.dart                                                   | Dart       |         22 |          7 |          3 |         32 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\constant.dart                                                                | Dart       |         10 |          0 |          4 |         14 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\main.dart                                                                    | Dart       |         28 |          1 |          4 |         33 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\models\login.dart                                                            | Dart       |        207 |          0 |         27 |        234 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\models\modals.dart                                                           | Dart       |        502 |          0 |         47 |        549 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\models\package.dart                                                          | Dart       |        273 |          6 |         13 |        292 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\models\server.dart                                                           | Dart       |          3 |          1 |          1 |          5 |
+| d:\StartupDevRepos\pmx\pmx-mobile\lib\models\status.dart                                                           | Dart       |         39 |         36 |         10 |         85 |
+| d:\StartupDevRepos\pmx\pmx-mobile\linux\flutter\generated_plugin_registrant.cc                                     | C++        |          3 |          4 |          5 |         12 |
+| d:\StartupDevRepos\pmx\pmx-mobile\linux\flutter\generated_plugin_registrant.h                                      | C++        |          5 |          5 |          6 |         16 |
+| d:\StartupDevRepos\pmx\pmx-mobile\linux\main.cc                                                                    | C++        |          5 |          0 |          2 |          7 |
+| d:\StartupDevRepos\pmx\pmx-mobile\linux\my_application.cc                                                          | C++        |         74 |         11 |         20 |        105 |
+| d:\StartupDevRepos\pmx\pmx-mobile\linux\my_application.h                                                           | C++        |          7 |          7 |          5 |         19 |
+| d:\StartupDevRepos\pmx\pmx-mobile\macos\Runner.xcodeproj\project.xcworkspace\xcshareddata\IDEWorkspaceChecks.plist | XML        |          8 |          0 |          1 |          9 |
+| d:\StartupDevRepos\pmx\pmx-mobile\macos\Runner.xcworkspace\xcshareddata\IDEWorkspaceChecks.plist                   | XML        |          8 |          0 |          1 |          9 |
+| d:\StartupDevRepos\pmx\pmx-mobile\macos\Runner\AppDelegate.swift                                                   | Swift      |          8 |          0 |          2 |         10 |
+| d:\StartupDevRepos\pmx\pmx-mobile\macos\Runner\Assets.xcassets\AppIcon.appiconset\Contents.json                    | JSON       |         68 |          0 |          1 |         69 |
+| d:\StartupDevRepos\pmx\pmx-mobile\macos\Runner\Base.lproj\MainMenu.xib                                             | XML        |        343 |          0 |          1 |        344 |
+| d:\StartupDevRepos\pmx\pmx-mobile\macos\Runner\Info.plist                                                          | XML        |         32 |          0 |          1 |         33 |
+| d:\StartupDevRepos\pmx\pmx-mobile\macos\Runner\MainFlutterWindow.swift                                             | Swift      |         12 |          0 |          4 |         16 |
+| d:\StartupDevRepos\pmx\pmx-mobile\pubspec.yaml                                                                     | YAML       |         35 |         59 |         15 |        109 |
+| d:\StartupDevRepos\pmx\pmx-mobile\web\index.html                                                                   | HTML       |         37 |         16 |          6 |         59 |
+| d:\StartupDevRepos\pmx\pmx-mobile\web\manifest.json                                                                | JSON       |         35 |          0 |          1 |         36 |
+| d:\StartupDevRepos\pmx\pmx-mobile\windows\flutter\generated_plugin_registrant.cc                                   | C++        |          3 |          4 |          5 |         12 |
+| d:\StartupDevRepos\pmx\pmx-mobile\windows\flutter\generated_plugin_registrant.h                                    | C++        |          5 |          5 |          6 |         16 |
+| d:\StartupDevRepos\pmx\pmx-mobile\windows\runner\flutter_window.cpp                                                | C++        |         45 |          4 |         13 |         62 |
+| d:\StartupDevRepos\pmx\pmx-mobile\windows\runner\flutter_window.h                                                  | C++        |         20 |          5 |          9 |         34 |
+| d:\StartupDevRepos\pmx\pmx-mobile\windows\runner\main.cpp                                                          | C++        |         30 |          4 |         10 |         44 |
+| d:\StartupDevRepos\pmx\pmx-mobile\windows\runner\resource.h                                                        | C++        |          9 |          6 |          2 |         17 |
+| d:\StartupDevRepos\pmx\pmx-mobile\windows\runner\utils.cpp                                                         | C++        |         53 |          2 |         10 |         65 |
+| d:\StartupDevRepos\pmx\pmx-mobile\windows\runner\utils.h                                                           | C++        |          8 |          6 |          6 |         20 |
+| d:\StartupDevRepos\pmx\pmx-mobile\windows\runner\win32_window.cpp                                                  | C++        |        183 |         15 |         48 |        246 |
+| d:\StartupDevRepos\pmx\pmx-mobile\windows\runner\win32_window.h                                                    | C++        |         48 |         29 |         22 |         99 |
+| Total                                                                                                              |            |      4,328 |        724 |        497 |      5,549 |
++--------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

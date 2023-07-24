@@ -1,8 +1,8 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.startupdevmm.pmxpress"
-4    android:versionCode="8"
-5    android:versionName="1.0.8" >
+4    android:versionCode="9"
+5    android:versionName="1.0.9" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
@@ -18,247 +18,259 @@
 16    <uses-permission android:name="android.permission.CAMERA" />
 16-->[:mobile_scanner] D:\StartupDevRepos\pmx\pmx-mobile\build\mobile_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-65
 16-->[:mobile_scanner] D:\StartupDevRepos\pmx\pmx-mobile\build\mobile_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-62
-17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
-17-->[com.google.android.exoplayer:exoplayer-core:2.18.1] C:\Users\Zet\.gradle\caches\transforms-3\6ec2c823b2ddfa9d4aff16fd99b56b89\transformed\jetified-exoplayer-core-2.18.1\AndroidManifest.xml:24:5-79
-17-->[com.google.android.exoplayer:exoplayer-core:2.18.1] C:\Users\Zet\.gradle\caches\transforms-3\6ec2c823b2ddfa9d4aff16fd99b56b89\transformed\jetified-exoplayer-core-2.18.1\AndroidManifest.xml:24:22-76
-18    <uses-feature
-18-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:25:5-27:36
-19        android:name="android.hardware.camera"
-19-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:26:9-47
-20        android:required="false" />
-20-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:27:9-33
-21    <uses-feature
-21-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:28:5-30:36
-22        android:name="android.hardware.camera.front"
-22-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:29:9-53
-23        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
-23-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:30:9-33
-24    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
-25    <uses-feature
-25-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:33:5-35:36
-26        android:name="android.hardware.camera.autofocus"
-26-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:34:9-57
-27        android:required="false" />
-27-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:35:9-33
-28    <uses-feature
-28-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:36:5-38:36
-29        android:name="android.hardware.camera.flash"
-29-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:37:9-53
-30        android:required="false" />
-30-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:38:9-33
+17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+17-->[com.google.android.exoplayer:exoplayer-core:2.18.5] C:\Users\Zet\.gradle\caches\transforms-3\a7ab750d7c090acb5835b637430fa72f\transformed\jetified-exoplayer-core-2.18.5\AndroidManifest.xml:24:5-79
+17-->[com.google.android.exoplayer:exoplayer-core:2.18.5] C:\Users\Zet\.gradle\caches\transforms-3\a7ab750d7c090acb5835b637430fa72f\transformed\jetified-exoplayer-core-2.18.5\AndroidManifest.xml:24:22-76
+18
+19    <permission
+19-->[androidx.core:core:1.9.0] C:\Users\Zet\.gradle\caches\transforms-3\9a7532de5eb20fded516ad46c007ffcd\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+20        android:name="com.startupdevmm.pmxpress.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+20-->[androidx.core:core:1.9.0] C:\Users\Zet\.gradle\caches\transforms-3\9a7532de5eb20fded516ad46c007ffcd\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+21        android:protectionLevel="signature" />
+21-->[androidx.core:core:1.9.0] C:\Users\Zet\.gradle\caches\transforms-3\9a7532de5eb20fded516ad46c007ffcd\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+22
+23    <uses-permission android:name="com.startupdevmm.pmxpress.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
+23-->[androidx.core:core:1.9.0] C:\Users\Zet\.gradle\caches\transforms-3\9a7532de5eb20fded516ad46c007ffcd\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+23-->[androidx.core:core:1.9.0] C:\Users\Zet\.gradle\caches\transforms-3\9a7532de5eb20fded516ad46c007ffcd\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+24    <uses-feature
+24-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:25:5-27:36
+25        android:name="android.hardware.camera"
+25-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:26:9-47
+26        android:required="false" />
+26-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:27:9-33
+27    <uses-feature
+27-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:28:5-30:36
+28        android:name="android.hardware.camera.front"
+28-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:29:9-53
+29        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
+29-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:30:9-33
+30    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
 31    <uses-feature
-31-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:39:5-41:36
-32        android:name="android.hardware.screen.landscape"
-32-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:40:9-57
+31-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:33:5-35:36
+32        android:name="android.hardware.camera.autofocus"
+32-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:34:9-57
 33        android:required="false" />
-33-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:41:9-33
+33-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:35:9-33
 34    <uses-feature
-34-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:42:5-44:36
-35        android:name="android.hardware.wifi"
-35-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:43:9-45
+34-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:36:5-38:36
+35        android:name="android.hardware.camera.flash"
+35-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:37:9-53
 36        android:required="false" />
-36-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:44:9-33
-37
-38    <application
-39        android:name="android.app.Application"
-40        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-40-->[androidx.core:core:1.8.0] C:\Users\Zet\.gradle\caches\transforms-3\d363e3b5616f580c766e3e2b3c05f27d\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
-41        android:debuggable="true"
-42        android:icon="@mipmap/ic_launcher"
-43        android:label="PMXPress" >
-44        <activity
-45            android:name="com.startupdevmm.pmxpress.MainActivity"
-46            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-47            android:exported="true"
-48            android:hardwareAccelerated="true"
-49            android:launchMode="singleTop"
-50            android:theme="@style/LaunchTheme"
-51            android:windowSoftInputMode="adjustResize" >
-52            <meta-data
-53                android:name="io.flutter.embedding.android.NormalTheme"
-54                android:resource="@style/NormalTheme" />
-55
-56            <intent-filter>
-57                <action android:name="android.intent.action.MAIN" />
-58
-59                <category android:name="android.intent.category.LAUNCHER" />
-60            </intent-filter>
-61        </activity>
-62        <!--
-63             Don't delete the meta-data below.
-64             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-65        -->
-66        <meta-data
-67            android:name="flutterEmbedding"
-68            android:value="2" />
-69
-70        <provider
-70-->[:image_picker_android] D:\StartupDevRepos\pmx\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
-71            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-71-->[:image_picker_android] D:\StartupDevRepos\pmx\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-82
-72            android:authorities="com.startupdevmm.pmxpress.flutter.image_provider"
-72-->[:image_picker_android] D:\StartupDevRepos\pmx\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-74
-73            android:exported="false"
-73-->[:image_picker_android] D:\StartupDevRepos\pmx\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
-74            android:grantUriPermissions="true" >
-74-->[:image_picker_android] D:\StartupDevRepos\pmx\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
-75            <meta-data
-75-->[:image_picker_android] D:\StartupDevRepos\pmx\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:75
-76                android:name="android.support.FILE_PROVIDER_PATHS"
-76-->[:image_picker_android] D:\StartupDevRepos\pmx\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
-77                android:resource="@xml/flutter_image_picker_file_paths" />
-77-->[:image_picker_android] D:\StartupDevRepos\pmx\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-72
-78        </provider>
-79
-80        <uses-library
-80-->[androidx.window:window:1.0.0-beta04] C:\Users\Zet\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
-81            android:name="androidx.window.extensions"
-81-->[androidx.window:window:1.0.0-beta04] C:\Users\Zet\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
-82            android:required="false" />
-82-->[androidx.window:window:1.0.0-beta04] C:\Users\Zet\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
-83        <uses-library
-83-->[androidx.window:window:1.0.0-beta04] C:\Users\Zet\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
-84            android:name="androidx.window.sidecar"
-84-->[androidx.window:window:1.0.0-beta04] C:\Users\Zet\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
-85            android:required="false" />
-85-->[androidx.window:window:1.0.0-beta04] C:\Users\Zet\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
-86
-87        <service
-87-->[androidx.camera:camera-camera2:1.1.0] C:\Users\Zet\.gradle\caches\transforms-3\23364144ca75424e407a947c75004576\transformed\jetified-camera-camera2-1.1.0\AndroidManifest.xml:26:9-35:19
-88            android:name="androidx.camera.core.impl.MetadataHolderService"
-88-->[androidx.camera:camera-camera2:1.1.0] C:\Users\Zet\.gradle\caches\transforms-3\23364144ca75424e407a947c75004576\transformed\jetified-camera-camera2-1.1.0\AndroidManifest.xml:27:13-75
-89            android:enabled="false"
-89-->[androidx.camera:camera-camera2:1.1.0] C:\Users\Zet\.gradle\caches\transforms-3\23364144ca75424e407a947c75004576\transformed\jetified-camera-camera2-1.1.0\AndroidManifest.xml:28:13-36
-90            android:exported="false" >
-90-->[androidx.camera:camera-camera2:1.1.0] C:\Users\Zet\.gradle\caches\transforms-3\23364144ca75424e407a947c75004576\transformed\jetified-camera-camera2-1.1.0\AndroidManifest.xml:29:13-37
-91            <meta-data
-91-->[androidx.camera:camera-camera2:1.1.0] C:\Users\Zet\.gradle\caches\transforms-3\23364144ca75424e407a947c75004576\transformed\jetified-camera-camera2-1.1.0\AndroidManifest.xml:32:13-34:89
-92                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
-92-->[androidx.camera:camera-camera2:1.1.0] C:\Users\Zet\.gradle\caches\transforms-3\23364144ca75424e407a947c75004576\transformed\jetified-camera-camera2-1.1.0\AndroidManifest.xml:33:17-103
-93                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
-93-->[androidx.camera:camera-camera2:1.1.0] C:\Users\Zet\.gradle\caches\transforms-3\23364144ca75424e407a947c75004576\transformed\jetified-camera-camera2-1.1.0\AndroidManifest.xml:34:17-86
-94        </service>
-95        <service
-95-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.0.0] C:\Users\Zet\.gradle\caches\transforms-3\5c6e7baf6fb2b3692d55a2dd3d53beb7\transformed\jetified-play-services-mlkit-barcode-scanning-18.0.0\AndroidManifest.xml:9:9-15:19
-96            android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService"
-96-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.0.0] C:\Users\Zet\.gradle\caches\transforms-3\5c6e7baf6fb2b3692d55a2dd3d53beb7\transformed\jetified-play-services-mlkit-barcode-scanning-18.0.0\AndroidManifest.xml:10:13-91
-97            android:directBootAware="true"
-97-->[com.google.mlkit:common:18.0.0] C:\Users\Zet\.gradle\caches\transforms-3\a8d3f9dd24ace6c94bfc985ffc73f968\transformed\jetified-common-18.0.0\AndroidManifest.xml:17:13-43
-98            android:exported="false" >
-98-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.0.0] C:\Users\Zet\.gradle\caches\transforms-3\5c6e7baf6fb2b3692d55a2dd3d53beb7\transformed\jetified-play-services-mlkit-barcode-scanning-18.0.0\AndroidManifest.xml:11:13-37
-99            <meta-data
-99-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.0.0] C:\Users\Zet\.gradle\caches\transforms-3\5c6e7baf6fb2b3692d55a2dd3d53beb7\transformed\jetified-play-services-mlkit-barcode-scanning-18.0.0\AndroidManifest.xml:12:13-14:85
-100                android:name="com.google.firebase.components:com.google.mlkit.vision.barcode.internal.BarcodeRegistrar"
-100-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.0.0] C:\Users\Zet\.gradle\caches\transforms-3\5c6e7baf6fb2b3692d55a2dd3d53beb7\transformed\jetified-play-services-mlkit-barcode-scanning-18.0.0\AndroidManifest.xml:13:17-120
-101                android:value="com.google.firebase.components.ComponentRegistrar" />
-101-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.0.0] C:\Users\Zet\.gradle\caches\transforms-3\5c6e7baf6fb2b3692d55a2dd3d53beb7\transformed\jetified-play-services-mlkit-barcode-scanning-18.0.0\AndroidManifest.xml:14:17-82
-102            <meta-data
-102-->[com.google.mlkit:vision-common:17.0.0] C:\Users\Zet\.gradle\caches\transforms-3\6121614ac855993e2a9fb21868b51e27\transformed\jetified-vision-common-17.0.0\AndroidManifest.xml:12:13-14:85
-103                android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar"
-103-->[com.google.mlkit:vision-common:17.0.0] C:\Users\Zet\.gradle\caches\transforms-3\6121614ac855993e2a9fb21868b51e27\transformed\jetified-vision-common-17.0.0\AndroidManifest.xml:13:17-124
-104                android:value="com.google.firebase.components.ComponentRegistrar" />
-104-->[com.google.mlkit:vision-common:17.0.0] C:\Users\Zet\.gradle\caches\transforms-3\6121614ac855993e2a9fb21868b51e27\transformed\jetified-vision-common-17.0.0\AndroidManifest.xml:14:17-82
-105            <meta-data
-105-->[com.google.mlkit:common:18.0.0] C:\Users\Zet\.gradle\caches\transforms-3\a8d3f9dd24ace6c94bfc985ffc73f968\transformed\jetified-common-18.0.0\AndroidManifest.xml:20:13-22:85
-106                android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar"
-106-->[com.google.mlkit:common:18.0.0] C:\Users\Zet\.gradle\caches\transforms-3\a8d3f9dd24ace6c94bfc985ffc73f968\transformed\jetified-common-18.0.0\AndroidManifest.xml:21:17-120
-107                android:value="com.google.firebase.components.ComponentRegistrar" />
-107-->[com.google.mlkit:common:18.0.0] C:\Users\Zet\.gradle\caches\transforms-3\a8d3f9dd24ace6c94bfc985ffc73f968\transformed\jetified-common-18.0.0\AndroidManifest.xml:22:17-82
-108        </service>
-109
-110        <provider
-110-->[com.google.mlkit:common:18.0.0] C:\Users\Zet\.gradle\caches\transforms-3\a8d3f9dd24ace6c94bfc985ffc73f968\transformed\jetified-common-18.0.0\AndroidManifest.xml:9:9-13:38
-111            android:name="com.google.mlkit.common.internal.MlKitInitProvider"
-111-->[com.google.mlkit:common:18.0.0] C:\Users\Zet\.gradle\caches\transforms-3\a8d3f9dd24ace6c94bfc985ffc73f968\transformed\jetified-common-18.0.0\AndroidManifest.xml:10:13-78
-112            android:authorities="com.startupdevmm.pmxpress.mlkitinitprovider"
-112-->[com.google.mlkit:common:18.0.0] C:\Users\Zet\.gradle\caches\transforms-3\a8d3f9dd24ace6c94bfc985ffc73f968\transformed\jetified-common-18.0.0\AndroidManifest.xml:11:13-69
-113            android:exported="false"
-113-->[com.google.mlkit:common:18.0.0] C:\Users\Zet\.gradle\caches\transforms-3\a8d3f9dd24ace6c94bfc985ffc73f968\transformed\jetified-common-18.0.0\AndroidManifest.xml:12:13-37
-114            android:initOrder="99" />
-114-->[com.google.mlkit:common:18.0.0] C:\Users\Zet\.gradle\caches\transforms-3\a8d3f9dd24ace6c94bfc985ffc73f968\transformed\jetified-common-18.0.0\AndroidManifest.xml:13:13-35
+36-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:38:9-33
+37    <uses-feature
+37-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:39:5-41:36
+38        android:name="android.hardware.screen.landscape"
+38-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:40:9-57
+39        android:required="false" />
+39-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:41:9-33
+40    <uses-feature
+40-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:42:5-44:36
+41        android:name="android.hardware.wifi"
+41-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:43:9-45
+42        android:required="false" />
+42-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:44:9-33
+43
+44    <application
+45        android:name="android.app.Application"
+46        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+46-->[androidx.core:core:1.9.0] C:\Users\Zet\.gradle\caches\transforms-3\9a7532de5eb20fded516ad46c007ffcd\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+47        android:debuggable="true"
+48        android:icon="@mipmap/ic_launcher"
+49        android:label="PMXPress" >
+50        <activity
+51            android:name="com.startupdevmm.pmxpress.MainActivity"
+52            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+53            android:exported="true"
+54            android:hardwareAccelerated="true"
+55            android:launchMode="singleTop"
+56            android:theme="@style/LaunchTheme"
+57            android:windowSoftInputMode="adjustResize" >
+58            <meta-data
+59                android:name="io.flutter.embedding.android.NormalTheme"
+60                android:resource="@style/NormalTheme" />
+61
+62            <intent-filter>
+63                <action android:name="android.intent.action.MAIN" />
+64
+65                <category android:name="android.intent.category.LAUNCHER" />
+66            </intent-filter>
+67        </activity>
+68        <!--
+69             Don't delete the meta-data below.
+70             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+71        -->
+72        <meta-data
+73            android:name="flutterEmbedding"
+74            android:value="2" />
+75
+76        <provider
+76-->[:image_picker_android] D:\StartupDevRepos\pmx\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
+77            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+77-->[:image_picker_android] D:\StartupDevRepos\pmx\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-82
+78            android:authorities="com.startupdevmm.pmxpress.flutter.image_provider"
+78-->[:image_picker_android] D:\StartupDevRepos\pmx\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-74
+79            android:exported="false"
+79-->[:image_picker_android] D:\StartupDevRepos\pmx\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
+80            android:grantUriPermissions="true" >
+80-->[:image_picker_android] D:\StartupDevRepos\pmx\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
+81            <meta-data
+81-->[:image_picker_android] D:\StartupDevRepos\pmx\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:75
+82                android:name="android.support.FILE_PROVIDER_PATHS"
+82-->[:image_picker_android] D:\StartupDevRepos\pmx\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
+83                android:resource="@xml/flutter_image_picker_file_paths" />
+83-->[:image_picker_android] D:\StartupDevRepos\pmx\pmx-mobile\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-72
+84        </provider>
+85
+86        <service
+86-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.2.0] C:\Users\Zet\.gradle\caches\transforms-3\38b656eaa2333f5157f1f532c60fe1eb\transformed\jetified-play-services-mlkit-barcode-scanning-18.2.0\AndroidManifest.xml:9:9-15:19
+87            android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService"
+87-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.2.0] C:\Users\Zet\.gradle\caches\transforms-3\38b656eaa2333f5157f1f532c60fe1eb\transformed\jetified-play-services-mlkit-barcode-scanning-18.2.0\AndroidManifest.xml:10:13-91
+88            android:directBootAware="true"
+88-->[com.google.mlkit:common:18.7.0] C:\Users\Zet\.gradle\caches\transforms-3\25b6c6372a74080f4281a7be2f7fdc22\transformed\jetified-common-18.7.0\AndroidManifest.xml:17:13-43
+89            android:exported="false" >
+89-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.2.0] C:\Users\Zet\.gradle\caches\transforms-3\38b656eaa2333f5157f1f532c60fe1eb\transformed\jetified-play-services-mlkit-barcode-scanning-18.2.0\AndroidManifest.xml:11:13-37
+90            <meta-data
+90-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.2.0] C:\Users\Zet\.gradle\caches\transforms-3\38b656eaa2333f5157f1f532c60fe1eb\transformed\jetified-play-services-mlkit-barcode-scanning-18.2.0\AndroidManifest.xml:12:13-14:85
+91                android:name="com.google.firebase.components:com.google.mlkit.vision.barcode.internal.BarcodeRegistrar"
+91-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.2.0] C:\Users\Zet\.gradle\caches\transforms-3\38b656eaa2333f5157f1f532c60fe1eb\transformed\jetified-play-services-mlkit-barcode-scanning-18.2.0\AndroidManifest.xml:13:17-120
+92                android:value="com.google.firebase.components.ComponentRegistrar" />
+92-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.2.0] C:\Users\Zet\.gradle\caches\transforms-3\38b656eaa2333f5157f1f532c60fe1eb\transformed\jetified-play-services-mlkit-barcode-scanning-18.2.0\AndroidManifest.xml:14:17-82
+93            <meta-data
+93-->[com.google.mlkit:vision-common:17.3.0] C:\Users\Zet\.gradle\caches\transforms-3\91974ccf168eef590ba2e6ea56fcf579\transformed\jetified-vision-common-17.3.0\AndroidManifest.xml:12:13-14:85
+94                android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar"
+94-->[com.google.mlkit:vision-common:17.3.0] C:\Users\Zet\.gradle\caches\transforms-3\91974ccf168eef590ba2e6ea56fcf579\transformed\jetified-vision-common-17.3.0\AndroidManifest.xml:13:17-124
+95                android:value="com.google.firebase.components.ComponentRegistrar" />
+95-->[com.google.mlkit:vision-common:17.3.0] C:\Users\Zet\.gradle\caches\transforms-3\91974ccf168eef590ba2e6ea56fcf579\transformed\jetified-vision-common-17.3.0\AndroidManifest.xml:14:17-82
+96            <meta-data
+96-->[com.google.mlkit:common:18.7.0] C:\Users\Zet\.gradle\caches\transforms-3\25b6c6372a74080f4281a7be2f7fdc22\transformed\jetified-common-18.7.0\AndroidManifest.xml:20:13-22:85
+97                android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar"
+97-->[com.google.mlkit:common:18.7.0] C:\Users\Zet\.gradle\caches\transforms-3\25b6c6372a74080f4281a7be2f7fdc22\transformed\jetified-common-18.7.0\AndroidManifest.xml:21:17-120
+98                android:value="com.google.firebase.components.ComponentRegistrar" />
+98-->[com.google.mlkit:common:18.7.0] C:\Users\Zet\.gradle\caches\transforms-3\25b6c6372a74080f4281a7be2f7fdc22\transformed\jetified-common-18.7.0\AndroidManifest.xml:22:17-82
+99        </service>
+100
+101        <provider
+101-->[com.google.mlkit:common:18.7.0] C:\Users\Zet\.gradle\caches\transforms-3\25b6c6372a74080f4281a7be2f7fdc22\transformed\jetified-common-18.7.0\AndroidManifest.xml:9:9-13:38
+102            android:name="com.google.mlkit.common.internal.MlKitInitProvider"
+102-->[com.google.mlkit:common:18.7.0] C:\Users\Zet\.gradle\caches\transforms-3\25b6c6372a74080f4281a7be2f7fdc22\transformed\jetified-common-18.7.0\AndroidManifest.xml:10:13-78
+103            android:authorities="com.startupdevmm.pmxpress.mlkitinitprovider"
+103-->[com.google.mlkit:common:18.7.0] C:\Users\Zet\.gradle\caches\transforms-3\25b6c6372a74080f4281a7be2f7fdc22\transformed\jetified-common-18.7.0\AndroidManifest.xml:11:13-69
+104            android:exported="false"
+104-->[com.google.mlkit:common:18.7.0] C:\Users\Zet\.gradle\caches\transforms-3\25b6c6372a74080f4281a7be2f7fdc22\transformed\jetified-common-18.7.0\AndroidManifest.xml:12:13-37
+105            android:initOrder="99" />
+105-->[com.google.mlkit:common:18.7.0] C:\Users\Zet\.gradle\caches\transforms-3\25b6c6372a74080f4281a7be2f7fdc22\transformed\jetified-common-18.7.0\AndroidManifest.xml:13:13-35
+106
+107        <activity
+107-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Zet\.gradle\caches\transforms-3\e05006473783c766e7da985dbf0ce8d2\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
+108            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+108-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Zet\.gradle\caches\transforms-3\e05006473783c766e7da985dbf0ce8d2\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:19-85
+109            android:exported="false"
+109-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Zet\.gradle\caches\transforms-3\e05006473783c766e7da985dbf0ce8d2\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:22:19-43
+110            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+110-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Zet\.gradle\caches\transforms-3\e05006473783c766e7da985dbf0ce8d2\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:21:19-78
+111
+112        <meta-data
+112-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\Zet\.gradle\caches\transforms-3\f4f6ca4ca92464911389cfa7ad67a910\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+113            android:name="com.google.android.gms.version"
+113-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\Zet\.gradle\caches\transforms-3\f4f6ca4ca92464911389cfa7ad67a910\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+114            android:value="@integer/google_play_services_version" />
+114-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\Zet\.gradle\caches\transforms-3\f4f6ca4ca92464911389cfa7ad67a910\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
 115
-116        <activity
-116-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Zet\.gradle\caches\transforms-3\3ff720be07735976176520d1c05fb799\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
-117            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-117-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Zet\.gradle\caches\transforms-3\3ff720be07735976176520d1c05fb799\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
-118            android:exported="false"
-118-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Zet\.gradle\caches\transforms-3\3ff720be07735976176520d1c05fb799\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
-119            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-119-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Zet\.gradle\caches\transforms-3\3ff720be07735976176520d1c05fb799\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
-120
-121        <meta-data
-121-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Zet\.gradle\caches\transforms-3\601d4158b382ad9f634d3bbb23a34c83\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:21:9-23:69
-122            android:name="com.google.android.gms.version"
-122-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Zet\.gradle\caches\transforms-3\601d4158b382ad9f634d3bbb23a34c83\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:22:13-58
-123            android:value="@integer/google_play_services_version" />
-123-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Zet\.gradle\caches\transforms-3\601d4158b382ad9f634d3bbb23a34c83\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:23:13-66
-124
-125        <provider
-125-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Zet\.gradle\caches\transforms-3\a8f15c438083418d3b3f80abdafb5523\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
-126            android:name="androidx.startup.InitializationProvider"
-126-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Zet\.gradle\caches\transforms-3\a8f15c438083418d3b3f80abdafb5523\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
-127            android:authorities="com.startupdevmm.pmxpress.androidx-startup"
-127-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Zet\.gradle\caches\transforms-3\a8f15c438083418d3b3f80abdafb5523\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
-128            android:exported="false" >
-128-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Zet\.gradle\caches\transforms-3\a8f15c438083418d3b3f80abdafb5523\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
-129            <meta-data
-129-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Zet\.gradle\caches\transforms-3\a8f15c438083418d3b3f80abdafb5523\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
-130                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-130-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Zet\.gradle\caches\transforms-3\a8f15c438083418d3b3f80abdafb5523\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
-131                android:value="androidx.startup" />
-131-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Zet\.gradle\caches\transforms-3\a8f15c438083418d3b3f80abdafb5523\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
-132            <meta-data
-132-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Zet\.gradle\caches\transforms-3\f84ca6d456abb0b1140abea481061573\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
-133                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-133-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Zet\.gradle\caches\transforms-3\f84ca6d456abb0b1140abea481061573\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
-134                android:value="androidx.startup" />
-134-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Zet\.gradle\caches\transforms-3\f84ca6d456abb0b1140abea481061573\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
-135        </provider>
-136
-137        <service
-137-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Zet\.gradle\caches\transforms-3\dc7c65a3010064290ad75bc9ded151e5\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:29:9-35:19
-138            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
-138-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Zet\.gradle\caches\transforms-3\dc7c65a3010064290ad75bc9ded151e5\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:30:13-103
-139            android:exported="false" >
-139-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Zet\.gradle\caches\transforms-3\dc7c65a3010064290ad75bc9ded151e5\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:31:13-37
-140            <meta-data
-140-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Zet\.gradle\caches\transforms-3\dc7c65a3010064290ad75bc9ded151e5\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:32:13-34:39
-141                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
-141-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Zet\.gradle\caches\transforms-3\dc7c65a3010064290ad75bc9ded151e5\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:33:17-94
-142                android:value="cct" />
-142-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Zet\.gradle\caches\transforms-3\dc7c65a3010064290ad75bc9ded151e5\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:34:17-36
-143        </service>
+116        <uses-library
+116-->[androidx.window:window:1.0.0-beta04] C:\Users\Zet\.gradle\caches\transforms-3\2c783ab52a1c0bde9dc9a768b03084b2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+117            android:name="androidx.window.extensions"
+117-->[androidx.window:window:1.0.0-beta04] C:\Users\Zet\.gradle\caches\transforms-3\2c783ab52a1c0bde9dc9a768b03084b2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+118            android:required="false" />
+118-->[androidx.window:window:1.0.0-beta04] C:\Users\Zet\.gradle\caches\transforms-3\2c783ab52a1c0bde9dc9a768b03084b2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+119        <uses-library
+119-->[androidx.window:window:1.0.0-beta04] C:\Users\Zet\.gradle\caches\transforms-3\2c783ab52a1c0bde9dc9a768b03084b2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+120            android:name="androidx.window.sidecar"
+120-->[androidx.window:window:1.0.0-beta04] C:\Users\Zet\.gradle\caches\transforms-3\2c783ab52a1c0bde9dc9a768b03084b2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+121            android:required="false" />
+121-->[androidx.window:window:1.0.0-beta04] C:\Users\Zet\.gradle\caches\transforms-3\2c783ab52a1c0bde9dc9a768b03084b2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+122
+123        <service
+123-->[androidx.camera:camera-camera2:1.2.2] C:\Users\Zet\.gradle\caches\transforms-3\d3e643e2438966999f11799305cd197b\transformed\jetified-camera-camera2-1.2.2\AndroidManifest.xml:24:9-33:19
+124            android:name="androidx.camera.core.impl.MetadataHolderService"
+124-->[androidx.camera:camera-camera2:1.2.2] C:\Users\Zet\.gradle\caches\transforms-3\d3e643e2438966999f11799305cd197b\transformed\jetified-camera-camera2-1.2.2\AndroidManifest.xml:25:13-75
+125            android:enabled="false"
+125-->[androidx.camera:camera-camera2:1.2.2] C:\Users\Zet\.gradle\caches\transforms-3\d3e643e2438966999f11799305cd197b\transformed\jetified-camera-camera2-1.2.2\AndroidManifest.xml:26:13-36
+126            android:exported="false" >
+126-->[androidx.camera:camera-camera2:1.2.2] C:\Users\Zet\.gradle\caches\transforms-3\d3e643e2438966999f11799305cd197b\transformed\jetified-camera-camera2-1.2.2\AndroidManifest.xml:27:13-37
+127            <meta-data
+127-->[androidx.camera:camera-camera2:1.2.2] C:\Users\Zet\.gradle\caches\transforms-3\d3e643e2438966999f11799305cd197b\transformed\jetified-camera-camera2-1.2.2\AndroidManifest.xml:30:13-32:89
+128                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+128-->[androidx.camera:camera-camera2:1.2.2] C:\Users\Zet\.gradle\caches\transforms-3\d3e643e2438966999f11799305cd197b\transformed\jetified-camera-camera2-1.2.2\AndroidManifest.xml:31:17-103
+129                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
+129-->[androidx.camera:camera-camera2:1.2.2] C:\Users\Zet\.gradle\caches\transforms-3\d3e643e2438966999f11799305cd197b\transformed\jetified-camera-camera2-1.2.2\AndroidManifest.xml:32:17-86
+130        </service>
+131
+132        <provider
+132-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Zet\.gradle\caches\transforms-3\2a05509d773c0dc0ded6a0f5d695be03\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+133            android:name="androidx.startup.InitializationProvider"
+133-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Zet\.gradle\caches\transforms-3\2a05509d773c0dc0ded6a0f5d695be03\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+134            android:authorities="com.startupdevmm.pmxpress.androidx-startup"
+134-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Zet\.gradle\caches\transforms-3\2a05509d773c0dc0ded6a0f5d695be03\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+135            android:exported="false" >
+135-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Zet\.gradle\caches\transforms-3\2a05509d773c0dc0ded6a0f5d695be03\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+136            <meta-data
+136-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Zet\.gradle\caches\transforms-3\2a05509d773c0dc0ded6a0f5d695be03\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+137                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+137-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Zet\.gradle\caches\transforms-3\2a05509d773c0dc0ded6a0f5d695be03\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+138                android:value="androidx.startup" />
+138-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Zet\.gradle\caches\transforms-3\2a05509d773c0dc0ded6a0f5d695be03\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+139            <meta-data
+139-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Zet\.gradle\caches\transforms-3\c9870ab3285d20a7fa89a5f988d885a0\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+140                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+140-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Zet\.gradle\caches\transforms-3\c9870ab3285d20a7fa89a5f988d885a0\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+141                android:value="androidx.startup" />
+141-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Zet\.gradle\caches\transforms-3\c9870ab3285d20a7fa89a5f988d885a0\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+142        </provider>
+143
 144        <service
-144-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\Zet\.gradle\caches\transforms-3\9f6b077e57e6a6558af0f12467efdf97\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:26:9-30:19
-145            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
-145-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\Zet\.gradle\caches\transforms-3\9f6b077e57e6a6558af0f12467efdf97\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:27:13-117
-146            android:exported="false"
-146-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\Zet\.gradle\caches\transforms-3\9f6b077e57e6a6558af0f12467efdf97\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:28:13-37
-147            android:permission="android.permission.BIND_JOB_SERVICE" >
-147-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\Zet\.gradle\caches\transforms-3\9f6b077e57e6a6558af0f12467efdf97\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:29:13-69
-148        </service>
-149
-150        <receiver
-150-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\Zet\.gradle\caches\transforms-3\9f6b077e57e6a6558af0f12467efdf97\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:32:9-34:40
-151            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
-151-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\Zet\.gradle\caches\transforms-3\9f6b077e57e6a6558af0f12467efdf97\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:33:13-132
-152            android:exported="false" />
-152-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\Zet\.gradle\caches\transforms-3\9f6b077e57e6a6558af0f12467efdf97\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:34:13-37
-153
-154        <activity
-154-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:47:9-53:63
-155            android:name="com.journeyapps.barcodescanner.CaptureActivity"
-155-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:48:13-74
-156            android:clearTaskOnLaunch="true"
-156-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:49:13-45
-157            android:screenOrientation="sensorLandscape"
-157-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:50:13-56
-158            android:stateNotNeeded="true"
-158-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:51:13-42
-159            android:theme="@style/zxing_CaptureTheme"
-159-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:52:13-54
-160            android:windowSoftInputMode="stateAlwaysHidden" />
-160-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\77be51fb7627331aa2f8ec0f3aaea8ed\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:53:13-60
-161    </application>
-162
-163</manifest>
+144-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Zet\.gradle\caches\transforms-3\8b410cfb1c3bffe5e6f3debe570fefa2\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:29:9-35:19
+145            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+145-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Zet\.gradle\caches\transforms-3\8b410cfb1c3bffe5e6f3debe570fefa2\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:30:13-103
+146            android:exported="false" >
+146-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Zet\.gradle\caches\transforms-3\8b410cfb1c3bffe5e6f3debe570fefa2\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:31:13-37
+147            <meta-data
+147-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Zet\.gradle\caches\transforms-3\8b410cfb1c3bffe5e6f3debe570fefa2\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:32:13-34:39
+148                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+148-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Zet\.gradle\caches\transforms-3\8b410cfb1c3bffe5e6f3debe570fefa2\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:33:17-94
+149                android:value="cct" />
+149-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Zet\.gradle\caches\transforms-3\8b410cfb1c3bffe5e6f3debe570fefa2\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:34:17-36
+150        </service>
+151        <service
+151-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\Zet\.gradle\caches\transforms-3\bf5422e35215303a246da79b83e93e3e\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:26:9-30:19
+152            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+152-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\Zet\.gradle\caches\transforms-3\bf5422e35215303a246da79b83e93e3e\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:27:13-117
+153            android:exported="false"
+153-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\Zet\.gradle\caches\transforms-3\bf5422e35215303a246da79b83e93e3e\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:28:13-37
+154            android:permission="android.permission.BIND_JOB_SERVICE" >
+154-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\Zet\.gradle\caches\transforms-3\bf5422e35215303a246da79b83e93e3e\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:29:13-69
+155        </service>
+156
+157        <receiver
+157-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\Zet\.gradle\caches\transforms-3\bf5422e35215303a246da79b83e93e3e\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:32:9-34:40
+158            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+158-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\Zet\.gradle\caches\transforms-3\bf5422e35215303a246da79b83e93e3e\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:33:13-132
+159            android:exported="false" />
+159-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\Zet\.gradle\caches\transforms-3\bf5422e35215303a246da79b83e93e3e\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:34:13-37
+160
+161        <activity
+161-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:47:9-53:63
+162            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+162-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:48:13-74
+163            android:clearTaskOnLaunch="true"
+163-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:49:13-45
+164            android:screenOrientation="sensorLandscape"
+164-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:50:13-56
+165            android:stateNotNeeded="true"
+165-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:51:13-42
+166            android:theme="@style/zxing_CaptureTheme"
+166-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:52:13-54
+167            android:windowSoftInputMode="stateAlwaysHidden" />
+167-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Zet\.gradle\caches\transforms-3\6a7cb1a118446681713128f7226ea954\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:53:13-60
+168    </application>
+169
+170</manifest>

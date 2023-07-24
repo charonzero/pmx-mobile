@@ -1,9 +1,10 @@
-// ignore_for_file: file_names, non_constant_identifier_names
-
 import 'dart:developer';
 import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:pmx/Screen/WrapperScreen/Pages/AddScreen.dart';
+import 'package:pmx/Screen/WrapperScreen/Pages/AddScreenPage.dart';
+import 'package:pmx/models/modals.dart';
+import 'package:pmx/models/package.dart';
 import 'package:pmx/models/server.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
@@ -11,26 +12,49 @@ class ScanScreen extends StatefulWidget {
   const ScanScreen({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _ScanScreenState();
+  _ScanScreenState createState() => _ScanScreenState();
 }
 
-class _ScanScreenState extends State<ScanScreen> {
-  Barcode? result;
-  QRViewController? controller;
-  final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
+class _ScanScreenState extends State<ScanScreen> with WidgetsBindingObserver {
+  QRViewController? _controller;
+  final GlobalKey _qrKey = GlobalKey(debugLabel: 'QR');
+  bool _isScanningEnabled = true;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance?.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance?.removeObserver(this);
+    _controller?.dispose();
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      print(
+          'resumed!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+      if (_isScanningEnabled) {
+        Future.delayed(const Duration(seconds: 2), () {
+          _controller?.resumeCamera();
+        });
+      }
+    } else if (state == AppLifecycleState.paused) {
+      _controller?.pauseCamera();
+    }
+  }
 
   @override
   void reassemble() {
     super.reassemble();
     if (Platform.isAndroid) {
-      controller!.pauseCamera();
+      _controller?.pauseCamera();
     }
-    controller!.resumeCamera();
-  }
-
-  @override
-  void initState() {
-    super.initState();
+    _controller?.resumeCamera();
   }
 
   @override
@@ -49,68 +73,74 @@ class _ScanScreenState extends State<ScanScreen> {
   }
 
   Widget _buildQrView(BuildContext context) {
-    var scanArea = (MediaQuery.of(context).size.width < 500 ||
-            MediaQuery.of(context).size.height < 500)
+    final scanArea = MediaQuery.of(context).size.width < 500 ||
+            MediaQuery.of(context).size.height < 500
         ? 250.0
         : 400.0;
     return QRView(
-      key: qrKey,
+      key: _qrKey,
       onQRViewCreated: _onQRViewCreated,
       overlay: QrScannerOverlayShape(
-          borderColor: Colors.redAccent,
-          borderRadius: 10,
-          borderLength: 30,
-          borderWidth: 12.5,
-          cutOutSize: scanArea),
-      onPermissionSet: (ctrl, p) => _onPermissionSet(context, ctrl, p),
+        borderColor: Colors.redAccent,
+        borderRadius: 10,
+        borderLength: 30,
+        borderWidth: 12.5,
+        cutOutSize: scanArea,
+      ),
+      onPermissionSet: _onPermissionSet,
     );
   }
 
-  void _onQRViewCreated(QRViewController controller) {
+  Future<void> _onQRViewCreated(QRViewController controller) async {
     try {
-      if (result == null) {
-        controller.resumeCamera();
-        setState(() {
-          this.controller = controller;
-        });
-      }
+      print('QR created');
+      setState(() {
+        _controller = controller;
+      });
       controller.scannedDataStream.listen((scanData) async {
-        setState(() {
-          result = scanData;
-        });
-        var orderId = scanData.code!.split('/')[4];
-        if (scanData.code!.split('/')[2] == server) {
-          AddScreenPageRoute(orderId);
-        } else {
-          setState(() {
-            result = null;
-          });
+        await controller.pauseCamera();
+        print(scanData.code);
+        final segments = scanData.code!.split('/');
+        final packageSecret = segments.length > 4 ? segments.last : null;
+        print(packageSecret);
+        if (packageSecret != null) {
+          // Pause the camera before navigation
+          if (mounted) {
+            setState(() {
+              _isScanningEnabled = false;
+            });
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => AddScreenPage(
+                  packageSecret: packageSecret,
+                ),
+              ),
+            ).then((_) {
+              Future.delayed(const Duration(seconds: 10), () {
+                if (mounted) {
+                  setState(() {
+                    _isScanningEnabled = true;
+                  });
+                }
+                _controller?.resumeCamera();
+              });
+              // Resume the camera after navigation
+            });
+          }
         }
       });
-    } catch (err) {
-      result = null;
+    } catch (e) {
+      log('QR scan error: $e');
     }
   }
 
-  AddScreenPageRoute(orderId) async {
-    controller?.pauseCamera();
-    await Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return AddScreen(orderid: orderId);
-    })).then((value) => controller?.resumeCamera());
-  }
-
-  void _onPermissionSet(BuildContext context, QRViewController ctrl, bool p) {
+  void _onPermissionSet(QRViewController ctrl, bool p) {
     log('${DateTime.now().toIso8601String()}_onPermissionSet $p');
     if (!p) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('no Permission')),
+        const SnackBar(content: Text('No camera permission')),
       );
     }
-  }
-
-  @override
-  void dispose() {
-    controller?.dispose();
-    super.dispose();
   }
 }

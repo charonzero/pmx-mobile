@@ -10,7 +10,7 @@ class Background extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: secondarycolor,
+      color: secondaryColor,
       height: size.height,
       width: double.infinity,
       child: Stack(

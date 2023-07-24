@@ -53,13 +53,13 @@ class _RoundedPasswordFieldState extends State<RoundedPasswordField> {
             },
             icon: Icon(
               widget.suffixicon,
-              color: primarycolor,
+              color: primaryColor,
             )),
         prefixIcon: Padding(
           padding: const EdgeInsets.symmetric(vertical: 5),
           child: Icon(
             widget.icon,
-            color: primarycolor,
+            color: primaryColor,
           ),
         ),
         hintText: widget.hintText,
