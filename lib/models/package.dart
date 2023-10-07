@@ -79,6 +79,7 @@ Future<void> addPackage(int packageId, BuildContext buildContext) async {
               ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context);
+                  Navigator.pop(context);
                 },
                 child: const Text('OK'),
               ),
@@ -122,6 +123,7 @@ Future<void> addPackage(int packageId, BuildContext buildContext) async {
           actions: [
             ElevatedButton(
               onPressed: () {
+                Navigator.pop(context);
                 Navigator.pop(context);
               },
               child: const Text('OK'),

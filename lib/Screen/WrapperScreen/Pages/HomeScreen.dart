@@ -35,13 +35,6 @@ class _HomeScreenState extends State<HomeScreen> {
           currentPackages = currentPackageList;
         });
       }
-      // if (mounted) {
-      //   List<PackageData>? pastPackageList =
-      //       await fetchInventory('/getPastPackages', context);
-      //   setState(() {
-      //     pastPackages = pastPackageList ?? [];
-      //   });
-      // }
     } catch (e) {
       print('Error fetching packages: $e');
     }

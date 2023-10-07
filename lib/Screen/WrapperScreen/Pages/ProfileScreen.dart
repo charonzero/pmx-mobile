@@ -21,7 +21,6 @@ class ProfileScreen extends StatelessWidget {
             child: CircularProgressIndicator.adaptive(),
           );
         } else if (snapshot.data.isEmpty) {
-          // Redirect to login screen if session data is not available
           Future.delayed(Duration.zero, () {
             navigatorKey.currentState!.push(
               MaterialPageRoute(builder: (context) => const LoginScreen()),
@@ -110,31 +109,6 @@ class ProfileScreen extends StatelessWidget {
                             Container(
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 20),
-                              // child: const Column(
-                              //   crossAxisAlignment: CrossAxisAlignment.start,
-                              //   children: [
-                              //     SizedBox(height: 30),
-                              //     Text(
-                              //       'Account Settings',
-                              //       style: TextStyle(
-                              //         fontSize: 22,
-                              //         fontWeight: FontWeight.bold,
-                              //       ),
-                              //     ),
-                              //     SizedBox(height: 20),
-                              //     // ProfileButton(
-                              //     //   size: size,
-                              //     //   name: 'Change Password',
-                              //     //   route: const ChangePassword(),
-                              //     // ),
-                              //     // const SizedBox(height: 10),
-                              //     // ProfileButton(
-                              //     //   size: size,
-                              //     //   name: 'Privacy Settings',
-                              //     //   route: const ChangePassword(),
-                              //     // ),
-                              //   ],
-                              // ),
                             ),
                           ],
                         ),

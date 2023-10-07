@@ -29,7 +29,6 @@ class Inventory extends StatelessWidget {
               child: CircularProgressIndicator.adaptive(),
             );
           } else if (snapshot.data.isEmpty) {
-            // Redirect to login screen if session data is not available
             Future.delayed(Duration.zero, () {
               navigatorKey.currentState!.push(
                 MaterialPageRoute(builder: (context) => const LoginScreen()),
@@ -82,7 +81,6 @@ class Inventory extends StatelessWidget {
                                     fontSize: 14,
                                   ),
                                 ),
-                                // Add more details or customize the ListTile as needed
                               ),
                             ),
                           );
@@ -139,8 +137,33 @@ class Inventory extends StatelessWidget {
         await submitPackage(package.packageId!, 5, context);
         fetchPackagesCallback();
       } else {
-        await submitPackage(package.packageId!, 3, context);
-        fetchPackagesCallback();
+        showDialog(
+          context: context,
+          builder: (BuildContext dialogContext) {
+            return AlertDialog(
+              title: const Text('Choose Warehouse'),
+              content: const Text('Which warehouse do you want to deliver to?'),
+              actions: <Widget>[
+                TextButton(
+                  child: const Text('Thai Warehouse'),
+                  onPressed: () async {
+                    Navigator.of(dialogContext).pop(); // Close the dialog
+                    await submitPackage(package.packageId!, 1, context);
+                    fetchPackagesCallback();
+                  },
+                ),
+                TextButton(
+                  child: const Text('Myanmar Warehouse'),
+                  onPressed: () async {
+                    Navigator.of(dialogContext).pop(); // Close the dialog
+                    await submitPackage(package.packageId!, 3, context);
+                    fetchPackagesCallback();
+                  },
+                ),
+              ],
+            );
+          },
+        );
       }
     }
 
@@ -262,6 +285,7 @@ class Inventory extends StatelessWidget {
                           child: ElevatedButton(
                             onPressed: () {
                               handleDeliveredButtonPress(package);
+                              Navigator.pop(context);
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.teal,
@@ -273,8 +297,9 @@ class Inventory extends StatelessWidget {
                         ),
                         Expanded(
                           child: ElevatedButton(
-                            onPressed: () {
+                            onPressed: () async {
                               handleCanceledButtonPress(package);
+                              Navigator.pop(context);
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.redAccent,
@@ -288,13 +313,14 @@ class Inventory extends StatelessWidget {
                           child: ElevatedButton(
                             onPressed: () {
                               handleRescheduledButtonPress(package);
+                              Navigator.pop(context);
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.amber,
                               padding: const EdgeInsets.all(16.0),
                               textStyle: const TextStyle(fontSize: 13),
                             ),
-                            child: const Text('Reschedul'),
+                            child: const Text('Reschedule'),
                           ),
                         ),
                       ],
@@ -305,6 +331,7 @@ class Inventory extends StatelessWidget {
                           child: ElevatedButton(
                             onPressed: () {
                               handleDeliveredButtonPress(package);
+                              Navigator.pop(context);
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.teal,

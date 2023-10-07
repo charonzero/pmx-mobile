@@ -195,20 +195,27 @@ Future<int> login(String username, String password) async {
     var url = '$serverurl/login';
     var response = await http.post(Uri.parse(url), body: {
       'username': username,
-      'password': password
+      'password': password,
     }).timeout(const Duration(seconds: 15));
+
     final statusCode = response.statusCode;
     if (statusCode == 200) {
       Map<String, dynamic> decoded = jsonDecode(response.body)["userdata"];
-      print(decoded);
-      decoded['token'] = jsonDecode(response.body)["token"];
+      final token = jsonDecode(response.body)["token"];
+      final jwt = jsonDecode(response.body)['jwt'];
 
-      decoded['jwt'] = jsonDecode(response.body)['jwt'];
+      // Create a new SessionData object with the received token and jwt
+      SessionData data = SessionData.fromJson({
+        ...decoded,
+        'token': token,
+        'jwt': jwt,
+      });
 
-      SessionData data = SessionData.fromJson(decoded);
+      // Store the new SessionData in shared preferences
       (await SharedPreferences.getInstance())
           .setString('session_data', jsonEncode(data.toJson()));
     }
+
     return statusCode;
   } on TimeoutException {
     return -1;

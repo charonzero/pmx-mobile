@@ -15,9 +15,9 @@ class ChangePassword extends StatelessWidget {
               child: Scaffold(),
             );
           } else if (snapshot.hasError) {
-            return Column(
+            return const Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Icon(Icons.error),
                 SizedBox(
                   height: 5,

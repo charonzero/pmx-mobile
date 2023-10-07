@@ -16,7 +16,8 @@ class AddScreenPage extends StatefulWidget {
 
 class AddScreenPageState extends State<AddScreenPage> {
   PackageData? packageData;
-
+  bool isAddButtonPressed = false;
+  bool isBackButtonPressed = false;
   @override
   void initState() {
     super.initState();
@@ -27,11 +28,6 @@ class AddScreenPageState extends State<AddScreenPage> {
     try {
       PackageData? packageDatatmp =
           await getPackageDetails(widget.packageSecret, context);
-      print(
-          "=================================================================================================");
-      print(packageDatatmp);
-      print(
-          "=================================================================================================");
       setState(() {
         packageData = packageDatatmp;
       });
@@ -43,7 +39,10 @@ class AddScreenPageState extends State<AddScreenPage> {
 
   Future<void> _addPackage() async {
     if (packageData != null && packageData?.packageId != null) {
-      addPackage(packageData!.packageId!, context);
+      print('api');
+      await addPackage(packageData!.packageId!, context);
+    } else {
+      print('no api');
     }
   }
 
@@ -59,6 +58,9 @@ class AddScreenPageState extends State<AddScreenPage> {
           crossAxisAlignment: packageData != null
               ? CrossAxisAlignment.start
               : CrossAxisAlignment.center,
+          mainAxisAlignment: packageData != null
+              ? MainAxisAlignment.start
+              : MainAxisAlignment.center,
           children: [
             if (packageData != null) ...[
               const Text(
@@ -170,18 +172,41 @@ class AddScreenPageState extends State<AddScreenPage> {
             children: [
               Expanded(
                 child: GestureDetector(
-                  onTap: _addPackage,
-                  child: const SizedBox(
+                  onTapDown: (_) {
+                    setState(() {
+                      isAddButtonPressed = true;
+                    });
+                  },
+                  onTapUp: (_) {
+                    setState(() {
+                      isAddButtonPressed = false;
+                    });
+                    _addPackage();
+                  },
+                  onTapCancel: () {
+                    setState(() {
+                      isAddButtonPressed = false;
+                    });
+                  },
+                  child: SizedBox(
                     height: double.infinity,
                     child: Center(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.add),
+                          Icon(
+                            Icons.add,
+                            color:
+                                isAddButtonPressed ? Colors.blue : Colors.black,
+                          ),
                           SizedBox(width: 8),
                           Text(
                             'Add',
-                            style: TextStyle(fontSize: 18),
+                            style: TextStyle(
+                                fontSize: 18,
+                                color: isAddButtonPressed
+                                    ? Colors.blue
+                                    : Colors.black),
                           ),
                         ],
                       ),
@@ -191,20 +216,42 @@ class AddScreenPageState extends State<AddScreenPage> {
               ),
               Expanded(
                 child: GestureDetector(
-                  onTap: () {
+                  onTapDown: (_) {
+                    setState(() {
+                      isBackButtonPressed = true;
+                    });
+                  },
+                  onTapUp: (_) {
+                    setState(() {
+                      isBackButtonPressed = false;
+                    });
                     Navigator.pop(context);
                   },
-                  child: const SizedBox(
+                  onTapCancel: () {
+                    setState(() {
+                      isBackButtonPressed = false;
+                    });
+                  },
+                  child: SizedBox(
                     height: double.infinity,
                     child: Center(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.arrow_back),
+                          Icon(
+                            Icons.arrow_back,
+                            color: isBackButtonPressed
+                                ? Colors.blue
+                                : Colors.black,
+                          ),
                           SizedBox(width: 8),
                           Text(
                             'Back',
-                            style: TextStyle(fontSize: 18),
+                            style: TextStyle(
+                                fontSize: 18,
+                                color: isBackButtonPressed
+                                    ? Colors.blue
+                                    : Colors.black),
                           ),
                         ],
                       ),

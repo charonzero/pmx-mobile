@@ -93,18 +93,14 @@ class _ScanScreenState extends State<ScanScreen> with WidgetsBindingObserver {
 
   Future<void> _onQRViewCreated(QRViewController controller) async {
     try {
-      print('QR created');
       setState(() {
         _controller = controller;
       });
       controller.scannedDataStream.listen((scanData) async {
         await controller.pauseCamera();
-        print(scanData.code);
         final segments = scanData.code!.split('/');
         final packageSecret = segments.length > 4 ? segments.last : null;
-        print(packageSecret);
         if (packageSecret != null) {
-          // Pause the camera before navigation
           if (mounted) {
             setState(() {
               _isScanningEnabled = false;
@@ -117,7 +113,7 @@ class _ScanScreenState extends State<ScanScreen> with WidgetsBindingObserver {
                 ),
               ),
             ).then((_) {
-              Future.delayed(const Duration(seconds: 10), () {
+              Future.delayed(const Duration(seconds: 1), () {
                 if (mounted) {
                   setState(() {
                     _isScanningEnabled = true;
@@ -125,7 +121,6 @@ class _ScanScreenState extends State<ScanScreen> with WidgetsBindingObserver {
                 }
                 _controller?.resumeCamera();
               });
-              // Resume the camera after navigation
             });
           }
         }

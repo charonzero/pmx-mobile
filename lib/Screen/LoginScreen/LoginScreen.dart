@@ -84,11 +84,6 @@ class LoginScreenState extends State<LoginScreen> {
                                   isLoading != true ? "Login" : 'Loading...'),
                               onpress: () async {
                                 loginUsers();
-                                // if (isLoading != true) {
-                                //   if (_loginformKey.currentState!.validate()) {
-                                //     loginUsers();
-                                //   }
-                                // }
                               }),
                         ],
                       ),
@@ -100,10 +95,10 @@ class LoginScreenState extends State<LoginScreen> {
   }
 
   Future<void> loginUsers() async {
-    //_loginformKey.currentState!.validate()
-    if (true) {
-      username = "charon";
-      password = "charon22";
+    //
+    if (_loginformKey.currentState!.validate()) {
+      // username = "charon";
+      // password = "charon22";
       setLoading(true);
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         behavior: SnackBarBehavior.floating,
